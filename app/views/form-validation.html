@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Get help with technology - GOV.UK
+{% endblock %}
+
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "/",
+  serviceName: "Get help with technology",
+  serviceUrl: "#",
+  containerClasses: "govuk-width-container",
+  navigation: [
+    {
+      href: "#1",
+      text: "Guidance",
+      active: true
+    },
+    {
+      href: "#2",
+      text: "Sign in"
+    }
+  ]
+}) }}
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="govuk-width-container">
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="mailto:COVID.TECHNOLOGY@education.gov.uk?subject=Feedback">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Error: Contact form
+      </h1>
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#full-name">Enter your full name</a>
+            </li>
+            <li>
+              <a href="#email">Enter an email address in the correct format, like name@example.com</a>
+            </li>
+            <li>
+              <a href="#request_subject">Please provide a brief subject-line</a>
+            </li>
+            <li>
+              <a href="#more-detail">Please provide details of your query</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  
+      <!-- PROTOTYPE CODE <form action="/docs/examples/pass-data/vehicle-check-answers" method="post" class="form"> -->
+        <form novalidate action="/hc/en-us/requests"  method="post" id="new_request" class="form" data-form="" data-form-type="request" accept-charset="UTF-8">
+          <input name="utf8" type="hidden" value="&#x2713;" />
+          <input type="hidden" name="authenticity_token" value="" />
+
+          <fieldset class="govuk-fieldset" aria-describedby="form-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Submit a request
+              </h1>
+            </legend>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="request_issue_type_select">
+                Please choose your issue below
+              </label>
+              <select class="govuk-select" id="request_issue_type_select" name="request[ticket_form_id]">
+                <option value="101">This issue</option>
+                <option value="102" selected>Common issue</option>
+                <option value="103">The other issue</option>
+                <option value="104">That issue</option>
+              </select>
+            </div>
+
+            <!--
+              *
+              * FULL NAME
+              *
+            -->
+            <div class="govuk-form-group govuk-form-group--error">
+              <label class="govuk-label" for="full-name">
+                Full name
+              </label>
+              <span id="full-name-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter your full name
+              </span>
+              <input class="govuk-input govuk-input--error" id="full-name" name="full-name" type="text" spellcheck="false" aria-describedby="full-name-error" autocomplete="name">
+            </div>
+
+
+            <!--
+              *
+              * EMAIL
+              * 
+              * label: for="request_anonymous_requester_email"
+              * input: name="request[anonymous_requester_email]"
+              * input: id="request_anonymous_requester_email"
+              *
+            -->
+            <div class="govuk-form-group govuk-form-group--error">
+              <label class="govuk-label" for="email">
+                Email address
+              </label>
+              <div id="email-hint" class="govuk-hint">
+                We use this to connect you to our support team
+              </div>
+              <span id="email-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter an email address in the correct format, like name@example.com
+              </span>
+              <input class="govuk-input govuk-input--error" id="email" name="email" type="email" spellcheck="false" value="Not an email address" aria-required="true" aria-describedby="email-hint email-error" autocomplete="email">
+            </div>
+
+
+            <div class="govuk-form-group govuk-form-group--error">
+              <label class="govuk-label" for="request_subject">
+                Subject
+              </label>
+              <div id="subject-hint" class="govuk-hint">
+                This tells us the subject of your request
+              </div>
+              <span id="email-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Please provide a brief subject-line
+              </span>
+              <input class="govuk-input govuk-!-width-two-thirds govuk-input--error" id="request_subject" name="request_subject" type="text" aria-describedby="email-hint email-error" maxlength="150">
+            </div>
+
+
+
+            <div class="govuk-form-group govuk-form-group--error">
+              <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
+                  Details of your query
+                </label>
+              </h1>
+              <div id="more-detail-hint" class="govuk-hint">
+                Please enter the details of your request. A member of our support staff will respond as soon as possible.
+              </div>
+              <span id="more-detail-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Please provide details of your query
+              </span>
+              <textarea class="govuk-textarea govuk-textarea--error" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint more-detail-error"></textarea>
+              <input type="hidden" name="request[description_mimetype]" id="request_description_mimetype" value="text/plain" style="display: none;" />
+
+            </div>
+
+          </fieldset>
+
+        <button data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+            Confirm and send
+        </button>
+        <!-- <input type="submit" name="commit" value="Submit" /> -->
+
+      </form>
+
+    </div>
+
+
+{% endblock %}
