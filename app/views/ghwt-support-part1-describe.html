@@ -1,0 +1,231 @@
+{% extends "layout.html" %} {% block pageTitle %} Start page example {% endblock
+%} {% block header %} {{ govukHeader({ homepageUrl: "/", serviceName: "Get help
+with technology", serviceUrl: "#", containerClasses: "govuk-width-container",
+navigation: [ { href: "#1", text: "Guidance", active: true }, { href: "#2",
+text: "Sign in" } ] }) }} {% endblock %} {% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/ghwt-support-start"
+        >Get support</a
+      >
+    </li>
+  </ol>
+</div>
+{% endblock %} {% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form
+          data-module="track-responses"
+          data-type="radio_question"
+          data-question-key="What are you coming to the UK to do?"
+          action="/check-uk-visa/y/afghanistan"
+          accept-charset="UTF-8"
+          method="get"
+        >
+          <div
+            class="govuk-!-margin-bottom-6 govuk-!-margin-top-8"
+            id="current-question"
+          >
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="hint-e496a843">
+                <legend
+                  class="govuk-fieldset__legend govuk-fieldset__legend--l"
+                >
+                  <span class="govuk-caption-l"
+                    >Get support</span
+                  >
+                  <h1 class="gem-c-radio__heading-text govuk-fieldset__heading">
+                    Which of these best describes you?
+                  </h1>
+                </legend>
+
+                <div
+                  id="hint-e496a843"
+                  class="gem-c-hint govuk-hint govuk-!-margin-bottom-3"
+                ></div>
+
+                <div class="govuk-radios">
+                  <div class="gem-c-radio govuk-radios__item">
+                    <input
+                      type="radio"
+                      name="response"
+                      id="response-0"
+                      value="tourism"
+                      class="govuk-radios__input"
+                    />
+
+                    <label
+                      for="response-0"
+                      class="gem-c-label govuk-label govuk-radios__label"
+                      >I work for a local authority</label
+                    >
+                  </div>
+
+                  <div class="gem-c-radio govuk-radios__item">
+                    <input
+                      type="radio"
+                      name="response"
+                      id="response-1"
+                      value="work"
+                      class="govuk-radios__input"
+                    />
+
+                    <label
+                      for="response-1"
+                      class="gem-c-label govuk-label govuk-radios__label"
+                      >I work for an academy trust</label
+                    >
+                  </div>
+
+                  <div class="gem-c-radio govuk-radios__item">
+                    <input
+                      type="radio"
+                      name="response"
+                      id="response-2"
+                      value="study"
+                      class="govuk-radios__input"
+                    />
+
+                    <label
+                      for="response-2"
+                      class="gem-c-label govuk-label govuk-radios__label"
+                      >I work for a school</label
+                    >
+                  </div>
+
+                  <div class="gem-c-radio govuk-radios__item">
+                    <input
+                      type="radio"
+                      name="response"
+                      id="response-3"
+                      value="transit"
+                      class="govuk-radios__input"
+                    />
+
+                    <label
+                      for="response-3"
+                      class="gem-c-label govuk-label govuk-radios__label"
+                      >I work for a college</label
+                    >
+                  </div>
+
+                  <div class="gem-c-radio govuk-radios__item">
+                    <input
+                      type="radio"
+                      name="response"
+                      id="response-4"
+                      value="family"
+                      class="govuk-radios__input"
+                    />
+
+                    <label
+                      for="response-4"
+                      class="gem-c-label govuk-label govuk-radios__label"
+                      >I'm a parent, guardian, care-leaver or pupil</label
+                    >
+                  </div>
+
+                  <div class="gem-c-radio govuk-radios__item">
+                    <input
+                      type="radio"
+                      name="response"
+                      id="response-5"
+                      value="marriage"
+                      class="govuk-radios__input"
+                    />
+
+                    <label
+                      for="response-5"
+                      class="gem-c-label govuk-label govuk-radios__label"
+                      >I'm not of the above</label
+                    >
+                  </div>
+
+              </fieldset>
+            </div>
+
+            <input type="hidden" name="next" value="1" />
+
+            <button
+              class="gem-c-button govuk-button gem-c-button--bottom-margin"
+              type="submit"
+            >
+              Next step
+            </button>
+          </div>
+        </form>
+
+        <table class="govuk-table previous-answers-table">
+          <caption class="govuk-table__caption">
+              <h2 class="govuk-heading-m">Your answers</h2>
+      
+            <p class="govuk-body">
+            <a class="govuk-link" data-module="track-click" data-track-action="Start again" data-track-category="StartAgain" data-track-label="What are you coming to the UK to do?" href="/check-uk-visa">Start again</a>
+            </p>
+          </caption>
+      
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Question</th>
+                <th scope="col" class="govuk-table__header">Answer</th>
+                <th scope="col" class="govuk-table__header">Change answer</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell govuk-!-width-one-half">Which of these best describes you?</td>
+        <td class="govuk-table__cell">
+          I work for a college
+        </td>
+        <td class="govuk-table__cell">
+          <a class="govuk-link" data-module="track-click" data-track-category="Smart Answer Change Link" data-track-action="Link clicked" data-track-label="What’s your nationality as shown on your passport or travel document? / Afghanistan" href="/check-uk-visa/y?previous_response=afghanistan">
+            Change<span class="govuk-visually-hidden"> answer to "Which of these best describes you?"</span>
+      </a>  </td>
+      </tr>
+      
+            </tbody>
+        </table>
+      
+
+        <!-- PROTOTYPE CODE <form action="/docs/examples/pass-data/vehicle-check-answers" method="post" class="form"> -->
+        <!-- <form
+          novalidate
+          action="/hc/en-us/requests"
+          method="post"
+          id="new_request"
+          class="form"
+          data-form=""
+          data-form-type="request"
+          accept-charset="UTF-8"
+        >
+          <input name="utf8" type="hidden" value="&#x2713;" />
+          <input type="hidden" name="authenticity_token" value="" />
+
+          <fieldset class="govuk-fieldset" aria-describedby="form-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">Submit a request</h1>
+            </legend>
+            <span id="form-hint" class="govuk-hint">
+              A member of our support staff will respond as soon as possible.
+            </span>
+          </fieldset>
+
+          <button
+            data-prevent-double-click="true"
+            class="govuk-button"
+            data-module="govuk-button"
+          >
+            Confirm and send
+          </button>
+          <input type="submit" name="commit" value="Submit" />
+        </form> -->
+      </div>
+
+  </div>
+  {% endblock %}
+</div>
