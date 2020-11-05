@@ -1,12 +1,34 @@
-{% extends "layout.html" %} {% block pageTitle %} Start page example {% endblock
-%} {% block header %} {{ govukHeader({ homepageUrl: "/", serviceName: "Get help
-with technology", serviceUrl: "#", containerClasses: "govuk-width-container",
-navigation: [ { href: "#1", text: "Guidance", active: true }, { href: "#2",
-text: "Sign in" } ] }) }} {% endblock %} {% block beforeContent %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Get help with technology",
+    serviceUrl: "#",
+    containerClasses: "govuk-width-container",
+    navigation: [
+      {
+        href: "#1",
+        text: "Guidance",
+        active: true
+      },
+      {
+        href: "#2",
+        text: "Sign in"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/start">Home</a>
+      <a class="govuk-breadcrumbs__link" href="/">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="/ghwt-support-start"
@@ -15,20 +37,19 @@ text: "Sign in" } ] }) }} {% endblock %} {% block beforeContent %}
     </li>
   </ol>
 </div>
-{% endblock %} {% block content %}
+{% endblock %}
+
+{% block content %}
+
+<!--https://design-system.service.gov.uk/patterns/check-answers/-->
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form
-          data-module="track-responses"
-          data-type="radio_question"
-          data-question-key="What are you coming to the UK to do?"
-          action="/check-uk-visa/y/afghanistan"
-          accept-charset="UTF-8"
-          method="get"
-        >
+
+        <form class="form" action="/ghwt-support-part2-contact" method="post">
+
           <div
-            class="govuk-!-margin-bottom-6 govuk-!-margin-top-8"
+            class="govuk-!-margin-bottom-6"
             id="current-question"
           >
             <div class="govuk-form-group">
@@ -39,158 +60,144 @@ text: "Sign in" } ] }) }} {% endblock %} {% block beforeContent %}
                   <span class="govuk-caption-l"
                     >Get support</span
                   >
-                  <h1 class="gem-c-radio__heading-text govuk-fieldset__heading">
+                  <h1 class="govuk-fieldset__heading">
                     Which of these best describes you?
                   </h1>
                 </legend>
 
                 <div
                   id="hint-e496a843"
-                  class="gem-c-hint govuk-hint govuk-!-margin-bottom-3"
+                  class="govuk-hint govuk-!-margin-bottom-3"
                 ></div>
 
-                <div class="govuk-radios">
-                  <div class="gem-c-radio govuk-radios__item">
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                  <div class="govuk-radios__item">
                     <input
                       type="radio"
-                      name="response"
-                      id="response-0"
-                      value="tourism"
+                      name="describe"
+                      id="describe-0"
+                      value="I work for a local authority"
                       class="govuk-radios__input"
+                      {{ checked("describe", "I work for a local authority") }}
                     />
 
                     <label
-                      for="response-0"
-                      class="gem-c-label govuk-label govuk-radios__label"
+                      for="describe-0"
+                      class="govuk-label govuk-radios__label"
                       >I work for a local authority</label
                     >
                   </div>
 
-                  <div class="gem-c-radio govuk-radios__item">
+                  <div class="govuk-radios__item">
                     <input
                       type="radio"
-                      name="response"
-                      id="response-1"
-                      value="work"
+                      name="describe"
+                      id="describe-1"
+                      value="I work for an academy trust"
                       class="govuk-radios__input"
+                      {{ checked("describe", "I work for an academy trust") }}
                     />
 
                     <label
-                      for="response-1"
-                      class="gem-c-label govuk-label govuk-radios__label"
+                      for="describe-1"
+                      class="govuk-label govuk-radios__label"
                       >I work for an academy trust</label
                     >
                   </div>
 
-                  <div class="gem-c-radio govuk-radios__item">
+                  <div class="govuk-radios__item">
                     <input
                       type="radio"
-                      name="response"
-                      id="response-2"
-                      value="study"
+                      name="describe"
+                      id="describe-2"
+                      value="I work for a school"
                       class="govuk-radios__input"
+                      {{ checked("describe", "I work for a school") }}
                     />
 
                     <label
-                      for="response-2"
-                      class="gem-c-label govuk-label govuk-radios__label"
+                      for="describe-2"
+                      class="govuk-label govuk-radios__label"
                       >I work for a school</label
                     >
                   </div>
 
-                  <div class="gem-c-radio govuk-radios__item">
+                  <div class="govuk-radios__item">
                     <input
                       type="radio"
-                      name="response"
-                      id="response-3"
-                      value="transit"
+                      name="describe"
+                      id="describe-3"
+                      value="I work for a college"
                       class="govuk-radios__input"
+                      {{ checked("describe", "I work for a college") }}
                     />
 
                     <label
-                      for="response-3"
-                      class="gem-c-label govuk-label govuk-radios__label"
+                      for="describe-3"
+                      class="govuk-label govuk-radios__label"
                       >I work for a college</label
                     >
                   </div>
 
-                  <div class="gem-c-radio govuk-radios__item">
+                  <div class="govuk-radios__item">
                     <input
                       type="radio"
-                      name="response"
-                      id="response-4"
-                      value="family"
+                      name="describe"
+                      id="describe-4"
+                      value="I'm a parent, guardian, care-leaver or pupil"
                       class="govuk-radios__input"
+                      {{ checked("describe", "I'm a parent, guardian, care-leaver or pupil") }}
                     />
 
                     <label
-                      for="response-4"
-                      class="gem-c-label govuk-label govuk-radios__label"
+                      for="describe-4"
+                      class="govuk-label govuk-radios__label"
                       >I'm a parent, guardian, care-leaver or pupil</label
                     >
                   </div>
 
-                  <div class="gem-c-radio govuk-radios__item">
+                  <div class="govuk-radios__item">
                     <input
                       type="radio"
-                      name="response"
-                      id="response-5"
-                      value="marriage"
+                      name="describe"
+                      id="describe-5"
+                      value="I'm none of the above"
                       class="govuk-radios__input"
+                      data-aria-controls="conditional-describe-5"
+                      {{ checked("describe", "I'm none of the above") }}
                     />
 
                     <label
-                      for="response-5"
-                      class="gem-c-label govuk-label govuk-radios__label"
-                      >I'm not of the above</label
+                      for="describe-5"
+                      class="govuk-label govuk-radios__label"
+                      >I'm none of the above</label
                     >
                   </div>
 
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-describe-5">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="describe-custom">
+                        Please provide details
+                      </label>
+                      <input class="govuk-input govuk-!-width-two-thirds" id="describe-custom" name="describe-custom" type="text">
+                    </div>
+                  </div>
+                  
+                </div><!--radio-group-->
               </fieldset>
-            </div>
-
-            <input type="hidden" name="next" value="1" />
-
+            </div><!--govuk-form-group-->
+           
             <button
-              class="gem-c-button govuk-button gem-c-button--bottom-margin"
-              type="submit"
+              data-module="govuk-button"
+              class="govuk-button"
             >
               Next step
             </button>
           </div>
         </form>
 
-        <table class="govuk-table previous-answers-table">
-          <caption class="govuk-table__caption">
-              <h2 class="govuk-heading-m">Your answers</h2>
-      
-            <p class="govuk-body">
-            <a class="govuk-link" data-module="track-click" data-track-action="Start again" data-track-category="StartAgain" data-track-label="What are you coming to the UK to do?" href="/check-uk-visa">Start again</a>
-            </p>
-          </caption>
-      
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Question</th>
-                <th scope="col" class="govuk-table__header">Answer</th>
-                <th scope="col" class="govuk-table__header">Change answer</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell govuk-!-width-one-half">Which of these best describes you?</td>
-        <td class="govuk-table__cell">
-          I work for a college
-        </td>
-        <td class="govuk-table__cell">
-          <a class="govuk-link" data-module="track-click" data-track-category="Smart Answer Change Link" data-track-action="Link clicked" data-track-label="What’s your nationality as shown on your passport or travel document? / Afghanistan" href="/check-uk-visa/y?previous_response=afghanistan">
-            Change<span class="govuk-visually-hidden"> answer to "Which of these best describes you?"</span>
-      </a>  </td>
-      </tr>
-      
-            </tbody>
-        </table>
-      
+        <a class="govuk-back-link" href="/ghwt-support-start">Back</a>
 
         <!-- PROTOTYPE CODE <form action="/docs/examples/pass-data/vehicle-check-answers" method="post" class="form"> -->
         <!-- <form
@@ -224,8 +231,8 @@ text: "Sign in" } ] }) }} {% endblock %} {% block beforeContent %}
           </button>
           <input type="submit" name="commit" value="Submit" />
         </form> -->
-      </div>
 
-  </div>
+      </div>
+    </div>
   {% endblock %}
-</div>
+

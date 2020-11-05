@@ -5,9 +5,53 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Get help with technology",
+    serviceUrl: "#",
+    containerClasses: "govuk-width-container",
+    navigation: [
+      {
+        href: "#1",
+        text: "Guidance",
+        active: true
+      },
+      {
+        href: "#2",
+        text: "Sign in"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/">Home</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
 {% block content %}
 
-  <div class="govuk-grid-row">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      {% if serviceName %} {{ serviceName }} {% endif %}
+    </h1>
+
+    <p>The Get Support form collects support data for connecting to the ZenDesk ticket system</p>
+    <p>Support is provided for Local Authorities, schools, colleges, hospital schools and priority students in these contexts. Support needs for indivduals will be directed on how to get help by connecting with relevant authorities.</p>
+    <a href="/ghwt-support-start" title="ghwt-start">Form start ></a>
+
+  </div>
+</div>
+
+  <!-- <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
         The GOV.UK Prototype Kit
@@ -39,6 +83,6 @@
         </li>
       </ul>
     </div>
-  </div>
+  </div> -->
 
 {% endblock %}

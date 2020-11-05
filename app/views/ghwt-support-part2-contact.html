@@ -28,80 +28,95 @@
   <div class="govuk-breadcrumbs">
     <ol class="govuk-breadcrumbs__list">
       <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+        <a class="govuk-breadcrumbs__link" href="/">Home</a>
       </li>
       <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">Section</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link">Subsection</a>
+        <a class="govuk-breadcrumbs__link" href="/ghwt-support-start">Get support</a>
       </li>
     </ol>
   </div>
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">
-        {% if serviceName %} {{ serviceName }} {% endif %}
-      </h1>
+    <form class="form" action="/ghwt-support-part3-support-needs-level1" method="post">
 
-      <p>Use this service to:</p>
+      <div
+        class="govuk-!-margin-bottom-6"
+        id="current-question"
+      >
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="hint-e496a843">
+            <legend
+              class="govuk-fieldset__legend govuk-fieldset__legend--l"
+            >
+              <span class="govuk-caption-l"
+                >Get support</span
+              >
+              <h1 class="govuk-fieldset__heading">
+                Please provide your contact details
+              </h1>
+            </legend>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>do something</li>
-        <li>update your name, address or other details</li>
-        <li>do something else</li>
-      </ul>
+            <div
+              id="hint-e496a843"
+              class="govuk-hint govuk-!-margin-bottom-3"
+            ></div>
 
-      <p>Registering takes around 5 minutes.</p>
 
-      <a href="/juggling-balls" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
-        Start now
-        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
-          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
-        </svg>
-      </a>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="full-name">
+                Full name
+              </label>
+              <!-- <span id="full-name-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter your full name
+              </span> -->
+              <input class="govuk-input" id="full-name" name="full-name" type="text" spellcheck="false" autocomplete="name" {{ data['full-name'] }}>
+              <!-- <input class="govuk-input govuk-input--error" id="full-name" name="full-name" type="text" spellcheck="false" aria-describedby="full-name-error" autocomplete="name"></div> -->
+            </div>
 
-      <h2 class="govuk-heading-m">Before you start</h2>
 
-      <p>You can also <a href="#">register by post</a>.</p>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="work-email">
+                You work email address
+              </label>
+              <div id="email-hint" class="govuk-hint">
+                We use this to connect you to our support team
+              </div>
+              <!-- <span id="email-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter an email address in the correct format, like name@example.com
+              </span> -->
+              <input class="govuk-input" id="work-email" name="work-email" type="email" spellcheck="false" aria-required="true" aria-describedby="email-hint email-error" autocomplete="email" {{ data['work-email'] }}>
+            </div>
 
-      <p>The online service is also available in <a href="#">Welsh (Cymraeg)</a>.</p>
 
-      <p>You can’t register for this service if you’re in the UK illegally.</p>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="work-telephone-number">
+                You work phone number
+              </label>
+              <div id="phone-hint" class="govuk-hint">
+                We need this as a fall-back contact method
+              </div>
+              <!-- <span id="phone-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter an email address in the correct format, like name@example.com
+              </span> -->
+              <input class="govuk-input govuk-input--width-20" id="work-telephone-number" name="work-telephone-number" aria-required="true" aria-describedby="phone-hint phone-error" type="tel" autocomplete="tel" {{ data['work-telephone-number'] }}>
 
-    </div>
+          </fieldset>
+        </div>
+       
+        <button
+          data-module="govuk-button"
+          class="govuk-button"
+        >
+          Next step
+        </button>
+      </div>
+    </form>
 
-    <div class="govuk-grid-column-one-third">
-
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          Subsection
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="#">
-                Related link
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Related link
-              </a>
-            </li>
-            <li>
-              <a href="#" class="govuk-!-font-weight-bold">
-                More <span class="govuk-visually-hidden">in Subsection</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-
+    <a class="govuk-back-link" href="/ghwt-support-part1-describe">Back</a>
     </div>
   </div>
 {% endblock %}

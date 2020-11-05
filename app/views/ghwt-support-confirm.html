@@ -1,0 +1,224 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Get help with technology",
+    serviceUrl: "#",
+    containerClasses: "govuk-width-container",
+    navigation: [
+      {
+        href: "#1",
+        text: "Guidance",
+        active: true
+      },
+      {
+        href: "#2",
+        text: "Sign in"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href=" "
+        >Get support</a
+      >
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Check your answers before sending your support query</h1>
+
+        <!-- What best describes you-->
+        <h2 class="govuk-heading-m" style="color:	#00703c">About you</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Which of these best describes you?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['describe'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/ghwt-support-part1-describe">
+                Change<span class="govuk-visually-hidden"> answer to "Which of these best describes you?"</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <!-- Contact details -->
+        <h2 class="govuk-heading-m" style="color:	#00703c">Contact details</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {{ data['full-name'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/ghwt-support-part2-contact">
+                Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+            </dd>
+        </div>  
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Work contact details
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">{{ data['work-email'] }}</p>
+              <p class="govuk-body">{{ data['work-telephone-number'] }}</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/ghwt-support-part2-contact">
+                Change<span class="govuk-visually-hidden"> work contact details</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+        
+        <!-- What do you want support with? -->
+        <h2 class="govuk-heading-m" style="color:	#00703c">What do you want support with?</h2>
+
+
+        <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              {% if checked("support", "Laptops and tablets") %}
+              Latops and tablets
+              {% endif %}
+
+              {% if checked("support", "4G wireless routers and internet access") %}
+              4G wireless routers and internet access
+              {% endif %}
+
+              {% if checked("support", "Digital education platforms") %}
+              Digital education platforms
+              {% endif %}
+
+              {% if checked("support", "Technology training and support") %}
+              Technology training and support
+              {% endif %}   
+              
+              {% if checked("support", "None of the above") %}
+              Other requirements
+              {% endif %} 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">
+                {% if checked("devices", "I've ordered devices, and have a question about my order") %}
+                I've ordered devices, and have a question about my order
+                {% endif %}
+                {% if checked("devices", "I want to know when my school or college will be able to order devices") %}
+                I want to know when my school or college will be able to order devices
+                {% endif %}
+                {% if checked("devices", "I want to know what types of devices are available, and what software and settings they have") %}
+                I want to know what types of devices are available, and what software and settings they have
+                {% endif %}
+                {% if checked("devices", "I have a query about device allocation") %}
+                I have a query about device allocation
+                {% endif %}
+                {% if checked("devices", "I need help with BIOS and local admin passwords to reset Microsoft Windows devices") %}
+                I need help with BIOS and local admin passwords to reset Microsoft Windows devices
+                {% endif %}
+                {% if checked("devices", "I, or someone else, needs help to access the Get help with technology service") %}
+                I, or someone else, needs help to access the Get help with technology service
+                {% endif %}
+                {% if checked("devices", "I, or someone else, needs help to access and order on TechSource") %}
+                I, or someone else, needs help to access and order on TechSource
+                {% endif %}
+                {% if checked("devices", "I, or someone else, needs help to access the Computacenter Support Portal")  %}
+                I, or someone else, needs help to access the Computacenter Support Portal
+                {% endif %}
+                <!--CONNECTIVITY-->
+                {% if checked("devices", "I, or someone else, needs help to access the Computacenter Support Portal")  %}
+                I, or someone else, needs help to access the Computacenter Support Portal
+                {% endif %}
+                {% if checked("connectivity", "I've ordered devices, and have a question about my order") %}
+                I've ordered devices, and have a question about my order
+                {% endif %}
+                {% if checked("connectivity", "I want to know when my school or college will be able to order devices") %}
+                I want to know when my school or college will be able to order devices
+                {% endif %}
+                {% if checked("connectivity", "I have a query about device allocation") %}
+                I have a query about device allocation
+                {% endif %}
+                <!--PLATFORMS -->
+                {% if checked("platforms", "I've ordered devices, and have a question about my order") %}
+                I've ordered devices, and have a question about my order
+                {% endif %}
+                {% if checked("platforms", "I want to know when my school or college will be able to order devices") %}
+                I want to know when my school or college will be able to order devices
+                {% endif %}
+                {% if checked("platforms", "None of the above") %}
+                {{ data['platforms-user-entry'] }}
+                {% endif %}
+                <!--TRAINING -->
+                {% if checked("training", "I've ordered devices, and have a question about my order") %}
+                I've ordered devices, and have a question about my order
+                {% endif %}
+                {% if checked("training", "I want to know when my school or college will be able to order devices") %}
+                I want to know when my school or college will be able to order devices
+                {% endif %}
+                {% if checked("training", "None of the above") %}
+                {{ data['training-user-entry'] }}
+                {% endif %}
+              </p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/ghwt-support-part3-support-needs-level2">
+                Change<span class="govuk-visually-hidden"> Details for Laptops and Tablets</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+        <div class="govuk-!-margin-bottom-9">
+          <a class="govuk-link govuk-!-font-size-19" href="/ghwt-support-part3-support-needs-level1">
+            Change Support category
+          </a>
+        </div>
+
+        <!-- OK to send -->
+        <h2 class="govuk-heading-m">Now send your support query</h2>
+
+        <p class="govuk-body">By submitting you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+        <form action="/form-handler" method="post" novalidate>
+
+          <input type="hidden" name="answers-checked" value="true">
+
+          <button class="govuk-button" data-module="govuk-button">
+            Accept and send
+          </button>
+
+        </form>
+      </div>
+    </div>
+  {% endblock %}
+
