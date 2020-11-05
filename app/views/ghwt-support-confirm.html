@@ -188,6 +188,10 @@
                 {% if checked("training", "None of the above") %}
                 {{ data['training-user-entry'] }}
                 {% endif %}
+                <!-- USER ENTRY-->
+                {% if checked("support", "None of the above") %}
+                {{ data['support-user-entry'] }}
+                {% endif %}
               </p>
             </dd>
             <dd class="govuk-summary-list__actions">
