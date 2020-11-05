@@ -39,7 +39,7 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column">
+  <div class="govuk-grid-column-two-thirds">
 
     <form class="form" action="/ghwt-support-confirm" method="post">
 
@@ -49,41 +49,17 @@
       >
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="hint-e496a843">
-            <legend
-              class="govuk-fieldset__legend govuk-fieldset__legend--l"
-            >
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <span class="govuk-caption-l"
                 >Get support</span
               >
-
-              <h1 class="govuk-fieldset__heading" style="width: 100%">
-                {% if checked("support", "Laptops and tablets") %}
-                Latops and tablets
-                  <span class="govuk-heading-m govuk-!-margin-bottom-0">What best describes the support you need?</span>
-                {% endif %}
-
-                {% if checked("support", "4G wireless routers and internet access") %}
-                4G wireless routers and internet access
-                  <span class="govuk-heading-m govuk-!-margin-bottom-0">What best describes the support you need?</span>
-                {% endif %}
-
-                {% if checked("support", "Digital education platforms") %}
-                Digital education platforms
-                  <span class="govuk-heading-m govuk-!-margin-bottom-0">What best describes the support you need?</span>
-                {% endif %}
-
-                {% if checked("support", "Technology training and support") %}
-                Technology training and support
-                  <span class="govuk-heading-m govuk-!-margin-bottom-0">What best describes the support you need?</span>
-                {% endif %}   
-                
-                {% if checked("support", "None of the above") %}
-                What best describes the support you need?
-                {% endif %} 
-               
+              <h1 class="govuk-fieldset__heading">
+                Can you provide more detail about the support you need?
               </h1>
-              
             </legend>
+            
+            
+
 
             <div
               id="hint-e496a843"
@@ -91,328 +67,14 @@
             ></div>
 
             <!-- IF CHECKBOX <div class="govuk-checkboxes__item"> // type="checkbix" // class="govuk-checkboxes__input" // class="govuk-label govuk-checkboxes__label"  -->
-            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-
-            {% if checked("support", "Laptops and tablets") %}
-
-              <div class="govuk-radios__item">
-                <input 
-                  type="radio" 
-                  name="devices" 
-                  id="devices-0"
-                  value="I've ordered devices, and have a question about my order"
-                  class="govuk-radios__input" 
-                  {{ checked("devices", "I've ordered devices, and have a question about my order") }}
-                >
-                <label 
-                  for="devices-0"
-                  class="govuk-label govuk-radios__label">
-                  I've ordered devices, and have a question about my order
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input 
-                  type="radio" 
-                  name="devices" 
-                  id="devices-1"
-                  value="I want to know when my school or college will be able to order devices"
-                  class="govuk-radios__input" 
-                  {{ checked("devices", "I want to know when my school or college will be able to order devices") }}
-                >
-                <label 
-                  for="devices-1"
-                  class="govuk-label govuk-radios__label">
-                  I want to know when my school or college will be able to order devices
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input 
-                  type="radio" 
-                  name="devices" 
-                  id="devices-2"
-                  value="I want to know what types of devices are available, and what software and settings they have"
-                  class="govuk-radios__input" 
-                  {{ checked("devices", "I want to know what types of devices are available, and what software and settings they have") }}
-                >
-                <label 
-                  for="devices-2"
-                  class="govuk-label govuk-radios__label">
-                  I want to know what types of devices are available, and what software and settings they have
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input 
-                  type="radio" 
-                  name="devices" 
-                  id="devices-3"
-                  value="I have a query about device allocation"
-                  class="govuk-radios__input" 
-                  {{ checked("devices", "I have a query about device allocation") }}
-                >
-                <label 
-                  for="devices-3"
-                  class="govuk-label govuk-radios__label">
-                  I have a query about device allocation
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input 
-                  type="radio" 
-                  name="devices" 
-                  id="devices-4"
-                  value="I need help with BIOS and local admin passwords to reset Microsoft Windows devices"
-                  class="govuk-radios__input" 
-                  {{ checked("devices", "I need help with BIOS and local admin passwords to reset Microsoft Windows devices") }}
-                >
-                <label 
-                  for="devices-4"
-                  class="govuk-label govuk-radios__label">
-                  I need help with BIOS and local admin passwords to reset Microsoft Windows devices
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input 
-                  type="radio" 
-                  name="devices" 
-                  id="devices-5"
-                  value="I, or someone else, needs help to access the Get help with technology service"
-                  class="govuk-radios__input" 
-                  {{ checked("devices", "I, or someone else, needs help to access the Get help with technology service") }}
-                >
-                <label 
-                  for="devices-5"
-                  class="govuk-label govuk-radios__label">
-                  I, or someone else, needs help to access the Get help with technology service
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input 
-                  type="radio" 
-                  name="devices" 
-                  id="devices-6"
-                  value="I, or someone else, needs help to access and order on TechSource"
-                  class="govuk-radios__input" 
-                  {{ checked("devices", "I, or someone else, needs help to access and order on TechSource") }}
-                >
-                <label 
-                  for="devices-6"
-                  class="govuk-label govuk-radios__label">
-                  I, or someone else, needs help to access and order on TechSource
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input 
-                  type="radio" 
-                  name="devices" 
-                  id="devices-7"
-                  value="I, or someone else, needs help to access the Computacenter Support Portal"
-                  class="govuk-radios__input" 
-                  {{ checked("devices", "I, or someone else, needs help to access the Computacenter Support Portal") }}
-                >
-                <label 
-                  for="devices-7"
-                  class="govuk-label govuk-radios__label">
-                  I, or someone else, needs help to access the Computacenter Support Portal
-                </label>
-              </div>
-            
-            {% endif %}  
-
-
-            {% if checked("support", "4G wireless routers and internet access") %}
-
-              <div class="govuk-radios__item">
-                <input 
-                  type="radio" 
-                  name="connectivity" 
-                  id="connectivity-0"
-                  value="I've ordered devices, and have a question about my order"
-                  class="govuk-radios__input" 
-                  {{ checked("connectivity", "I've ordered devices, and have a question about my order") }}
-                >
-                <label 
-                  for="connectivity-0"
-                  class="govuk-label govuk-radios__label">
-                  I've ordered devices, and have a question about my order
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input 
-                  type="radio" 
-                  name="connectivity" 
-                  id="connectivity-1"
-                  value="I want to know when my school or college will be able to order devices"
-                  class="govuk-radios__input" 
-                  {{ checked("connectivity", "I want to know when my school or college will be able to order devices") }}
-                >
-                <label 
-                  for="connectivity-1"
-                  class="govuk-label govuk-radios__label">
-                  I want to know when my school or college will be able to order devices
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input 
-                  type="radio" 
-                  name="connectivity" 
-                  id="connectivity-2"
-                  value="I have a query about device allocation"
-                  class="govuk-radios__input" 
-                  {{ checked("connectivity", "I have a query about device allocation") }}
-                >
-                <label 
-                  for="connectivity-2"
-                  class="govuk-label govuk-radios__label">
-                  I have a query about device allocation
-                </label>
-              </div>
-
-            {% endif %}  
-
-            {% if checked("support", "Digital education platforms") %}
-
-              <div class="govuk-radios__item">
-                <input 
-                  type="radio" 
-                  name="platforms" 
-                  id="platforms-0"
-                  value="I've ordered devices, and have a question about my order"
-                  class="govuk-radios__input" 
-                  {{ checked("platforms", "I've ordered devices, and have a question about my order") }}
-                >
-                <label 
-                  for="platforms-0"
-                  class="govuk-label govuk-radios__label">
-                  I want to know what funding and support is available to set up a digital education platform
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input 
-                  type="radio" 
-                  name="platforms" 
-                  id="platforms-1"
-                  value="I want to know when my school or college will be able to order devices"
-                  class="govuk-radios__input" 
-                  {{ checked("platforms", "I want to know when my school or college will be able to order devices") }}
-                >
-                <label 
-                  for="platforms-1"
-                  class="govuk-label govuk-radios__label">
-                  I have a question about my digital education platform application
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input 
-                  type="radio" 
-                  name="platforms" 
-                  id="platforms-2"
-                  value="None of the above"
-                  class="govuk-radios__input" 
-                  data-aria-controls="conditional-platforms-2"
-                  {{ checked("platforms", "None of the above") }}
-                >
-                <label 
-                  for="platforms-2"
-                  class="govuk-label govuk-radios__label">
-                  None of the above
-                </label>
-              </div>
-
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-platforms-2">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="platforms-user-entry">
-                    Please provide details
-                  </label>
-                  <textarea class="govuk-textarea govuk-!-width-two-thirds" id="platforms-user-entry" name="platforms-user-entry" rows="5" {{ data['platforms-user-entry'] }}></textarea>
-                </div>
-              </div>
-
-            {% endif %}  
-
-            {% if checked("support", "Technology training and support") %}
-
-              <div class="govuk-radios__item">
-                <input 
-                  type="radio" 
-                  name="training" 
-                  id="training-0"
-                  value="I've ordered devices, and have a question about my order"
-                  class="govuk-radios__input" 
-                  {{ checked("training", "I've ordered devices, and have a question about my order") }}
-                >
-                <label 
-                  for="training-0"
-                  class="govuk-label govuk-radios__label">
-                  I want to know what free training and support is available for me to set up and use technology effectively
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input 
-                  type="radio" 
-                  name="training" 
-                  id="training-1"
-                  value="I want to know when my school or college will be able to order devices"
-                  class="govuk-radios__input" 
-                  {{ checked("training", "I want to know when my school or college will be able to order devices") }}
-                >
-                <label 
-                  for="training-1"
-                  class="govuk-label govuk-radios__label">
-                  I have a question about my EdTech Demonstrator
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input 
-                  type="radio" 
-                  name="training" 
-                  id="training-2"
-                  value="None of the above"
-                  class="govuk-radios__input" 
-                  {{ checked("training", "None of the above") }}
-                  data-aria-controls="conditional-training-2"
-                >
-                <label 
-                  for="training-2"
-                  class="govuk-label govuk-radios__label">
-                  None of the above
-                </label>
-              </div>
-
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-training-2">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="training-user-entry">
-                    Please provide details
-                  </label>
-
-                  <textarea class="govuk-textarea govuk-!-width-two-thirds" id="training-user-entry" name="training-user-entry" rows="5" {{ data['training-user-entry'] }}></textarea>
-                </div>
-              </div>
-
-            {% endif %}  
-
-            {% if checked("support", "None of the above") %}
 
             <div class="govuk-form-group">
                 <label class="govuk-label govuk-label--s" for="support-user-entry">
                   Label to help with describing 
                 </label>
-              <textarea class="govuk-textarea govuk-!-width-two-thirds" id="support-user-entry" name="support-user-entry" rows="5" {{ data['support-user-entry'] }}></textarea>
+              <textarea class="govuk-textarea" id="support-user-entry" name="support-user-entry" rows="5" {{ data['support-user-entry'] }}></textarea>
             </div>
 
-            {% endif %}  
 
           </fieldset>
         </div>
@@ -429,6 +91,27 @@
 
     <a class="govuk-back-link" href="/ghwt-support-part3-support-needs-level1">Back</a>
 
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <h2 class="govuk-heading-m govuk-!-margin-top-7">Support topics</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      {% if checked("support", "Laptops and tablets") %}
+      <li>Laptops and tablets</li>
+      {% endif %}
+
+      {% if checked("support", "4G wireless routers and internet access") %}
+      <li>4G wireless routers and internet access</li>
+      {% endif %}
+
+      {% if checked("support", "Digital education platforms") %}
+      <li> Digital education platforms</li>
+      {% endif %}
+
+      {% if checked("support", "Technology training and support") %}
+      <li>Technology training and support</li>
+      {% endif %}  
+    </ul>
   </div>
 </div>
 {% endblock %}

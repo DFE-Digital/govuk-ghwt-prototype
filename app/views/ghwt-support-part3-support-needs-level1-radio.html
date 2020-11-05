@@ -48,7 +48,7 @@
         id="current-question"
       >
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="hint-support">
+          <fieldset class="govuk-fieldset" aria-describedby="hint-e496a843">
             <legend
               class="govuk-fieldset__legend govuk-fieldset__legend--l"
             >
@@ -56,100 +56,100 @@
                 >Get support</span
               >
               <h1 class="govuk-fieldset__heading">
-                What do you want to know or get support with?
+                What's the main thing you want to know or get support with?
               </h1>
             </legend>
 
             <div
-              id="hint-support"
+              id="hint-e496a843"
               class="govuk-hint govuk-!-margin-bottom-3"
-            >Please select the most relevant to your query</div>
+            ></div>
 
-            <div class="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="support"
                   id="support-0"
                   value="Laptops and tablets"
-                  class="govuk-checkboxes__input"
+                  class="govuk-radios__input"
                   {{ checked("support", "Laptops and tablets") }}
                 />
 
                 <label
                   for="support-0"
-                  class="govuk-label govuk-checkboxes__label"
+                  class="govuk-label govuk-radios__label"
                   >Laptops and tablets</label
                 >
               </div>
 
-              <div class="govuk-checkboxes__item">
+              <div class="govuk-radios__item">
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="support"
                   id="support-1"
                   value="4G wireless routers and internet access"
-                  class="govuk-checkboxes__input"
+                  class="govuk-radios__input"
                   {{ checked("support", "4G wireless routers and internet access") }}
                 />
 
                 <label
                   for="support-1"
-                  class="govuk-label govuk-checkboxes__label"
+                  class="govuk-label govuk-radios__label"
                   >4G wireless routers and internet access</label
                 >
               </div>
 
-              <div class="govuk-checkboxes__item">
+              <div class="govuk-radios__item">
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="support"
                   id="support-2"
                   value="Digital education platforms"
-                  class="govuk-checkboxes__input"
+                  class="govuk-radios__input"
                   {{ checked("support", "Digital education platforms") }}
                 />
 
                 <label
                   for="support-2"
-                  class="govuk-label govuk-checkboxes__label"
+                  class="govuk-label govuk-radios__label"
                   >Digital education platforms</label
                 >
               </div>
 
-              <div class="govuk-checkboxes__item">
+              <div class="govuk-radios__item">
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="support"
                   id="support-3"
                   value="Technology training and support"
-                  class="govuk-checkboxes__input"
+                  class="govuk-radios__input"
                   {{ checked("support", "Technology training and support") }}
                 />
 
                 <label
                   for="support-3"
-                  class="govuk-label govuk-checkboxes__label"
+                  class="govuk-label govuk-radios__label"
                   >Technology training and support</label
                 >
               </div>
 
-              <!-- <div class="govuk-checkboxes__item">
+              <div class="govuk-radios__item">
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="support"
                   id="support-4"
                   value="None of the above"
-                  class="govuk-checkboxes__input"
+                  class="govuk-radios__input"
                   {{ checked("support", "None of the above") }}
                 />
 
                 <label
                   for="support-4"
-                  class="govuk-label govuk-checkboxes__label"
+                  class="govuk-label govuk-radios__label"
                   >None of the above</label
                 >
-              </div> -->
+              </div>
             
             </div>
 
@@ -169,6 +169,5 @@
     <a class="govuk-back-link" href="/ghwt-support-part2-contact">Back</a>
 
   </div>
-  
 </div>
 {% endblock %}
