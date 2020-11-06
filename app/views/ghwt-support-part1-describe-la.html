@@ -41,7 +41,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="/ghwt-support-part1-describe-delegation" method="post">
+    <form class="form" action="/ghwt-support-part2-contact" method="post">
 
       <div
         class="govuk-!-margin-bottom-6"
@@ -56,15 +56,7 @@
                 >Get support</span
               >
               <h1 class="govuk-fieldset__heading">
-                {% if checked("describe", "I work for a school") %}
-                Please provide your school&rsquo;s details
-                {% endif %}
-                {% if checked("describe", "I work for a college") %}
-                Please provide your college&rsquo;s details
-                {% endif %}
-                {% if checked("describe", "I work for a local authority") %}
-                Please provide details of the Local Authority
-                {% endif %}
+                Responsibility for orders
               </h1>
             </legend>
 
@@ -72,6 +64,9 @@
               id="hint-e496a843"
               class="govuk-hint govuk-!-margin-bottom-3"
             ></div>
+
+
+
             
             <div class="govuk-form-group">
               <label class="govuk-label" for="full-name">
