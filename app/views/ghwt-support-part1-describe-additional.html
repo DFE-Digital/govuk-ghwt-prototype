@@ -41,7 +41,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="/ghwt-support-part1-describe-delegation" method="post">
+    <form class="form" action="/ghwt-support-part2-contact" method="post">
 
       <div
         class="govuk-!-margin-bottom-6"
@@ -64,6 +64,9 @@
                 {% endif %}
                 {% if checked("describe", "I work for a local authority") %}
                 Please provide details of the Local Authority
+                {% endif %}
+                {% if checked("describe", "I work for an academy trust") %}
+                Please provide details of the Academy Trust
                 {% endif %}
               </h1>
             </legend>
@@ -146,6 +149,8 @@
     </form>
 
     <a class="govuk-back-link" href="/ghwt-support-part1-describe">Back</a>
+    <a class="govuk-link" href="/ghwt-support-part1-describe-delegation">View additional question</a>
+   
     </div>
 
     <div class="govuk-grid-column-one-third">
