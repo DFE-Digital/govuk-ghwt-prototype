@@ -54,7 +54,7 @@
                 >Get support</span
               >
               <h1 class="govuk-fieldset__heading">
-                Can you provide more detail about the support you need?
+                Can you tell us more about your question or request?
               </h1>
             </legend>
             
@@ -65,7 +65,7 @@
 
             <div class="govuk-form-group">
                 <label class="govuk-label govuk-label--s" for="support-user-entry">
-                  Label to help with describing 
+                  This is the label
                 </label>
               <textarea class="govuk-textarea" id="support-user-entry" name="support-user-entry" rows="5" {{ data['support-user-entry'] }}></textarea>
             </div>
@@ -88,25 +88,91 @@
 
   </div>
 
-  <div class="govuk-grid-column-one-quarter">
-    <h2 class="govuk-heading-m govuk-!-margin-top-7">Support topics</h2>
-    <ul class="govuk-list govuk-list--bullet">
-      {% if checked("support", "Laptops and tablets") %}
-      <li>Laptops and tablets</li>
-      {% endif %}
+  <div class="govuk-grid-column-one-third">
+    <aside  role="complementary">
 
-      {% if checked("support", "4G wireless routers and internet access") %}
-      <li>4G wireless routers and internet access</li>
-      {% endif %}
 
-      {% if checked("support", "Digital education platforms") %}
-      <li> Digital education platforms</li>
-      {% endif %}
+     
+     
 
-      {% if checked("support", "Technology training and support") %}
-      <li>Technology training and support</li>
-      {% endif %}  
-    </ul>
+
+
+
+
+        <section class="govuk-section">
+          <nav role="navigation" aria-labelledby="support-topics">
+            {% if checked("support", "Laptops and tablets") %}
+            <h2 class="govuk-heading-m" id="support-topics">For laptops and tablets</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>
+                    <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">
+                      How and when to order laptops and tablets 
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">
+                      About device allocations
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">
+                      Device options and specifications
+                    </a>
+                  </li>
+                </ul>
+            {% endif %}
+
+            {% if checked("support", "4G wireless routers and internet access") %}
+            <h2 class="govuk-heading-m" id="support-topics">4G wireless routers and internet access</h2>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>
+                  <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">
+                    Get internet access
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">
+                    About 4G wireless routers
+                  </a>
+                </li>
+              </ul>
+            {% endif %}
+      
+            {% if checked("support", "Digital education platforms") %}
+            <h2 class="govuk-heading-m" id="support-topics">Digital education platforms</h2>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>
+                  <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">
+                    Get funding and support to set up a digital education platform
+                  </a>
+                </li>
+              </ul>
+            {% endif %}
+      
+            {% if checked("support", "Technology training and support") %}
+            <h2 class="govuk-heading-m" id="support-topics">Technology training and support</h2>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>
+                  <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">
+                    Get free training and support to set up and use technology effectively
+                  </a>
+                </li>
+              </ul>
+            {% endif %} 
+            
+            {% if checked("support", "Something else") %}
+            <h2 class="govuk-heading-m" id="support-topics">Something else</h2>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>
+                  <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">
+                    Find out more about the Get help with technology programme on GOV.UK
+                  </a>
+                </li>
+              </ul>
+            {% endif %} 
+          </nav>
+      </section>
+    </aside>
   </div>
 </div>
 {% endblock %}

@@ -31,7 +31,7 @@
       <a class="govuk-breadcrumbs__link" href="/">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href=" "
+      <a class="govuk-breadcrumbs__link" href="/ghwt-support-start"
         >Get support</a
       >
     </li>
@@ -44,7 +44,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Check your answers before sending your support query</h1>
+        <h1 class="govuk-heading-l">Check your answers before sending your support request</h1>
 
         <!-- What best describes you-->
         <h2 class="govuk-heading-m">About you</h2>
@@ -56,7 +56,11 @@
                 Which of these best describes you?
             </dt>
             <dd class="govuk-summary-list__value">
+              {% if checked("describe", "I'm none of the above") %}
+              {{ data['describe-custom'] }}
+              {% else %}
               {{ data['describe'] }}
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/ghwt-support-part1-describe">
@@ -87,15 +91,15 @@
 
         <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Work contact details
+              Contact details
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">{{ data['work-email'] }}</p>
-              <p class="govuk-body">{{ data['work-telephone-number'] }}</p>
+              <p class="govuk-body">{{ data['email'] }}</p>
+              <p class="govuk-body">{{ data['telephone-number'] }}</p>
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/ghwt-support-part2-contact">
-                Change<span class="govuk-visually-hidden"> work contact details</span>
+                Change<span class="govuk-visually-hidden"> contact details</span>
               </a>
             </dd>
           </div>
@@ -104,8 +108,7 @@
         <!-- What do you want support with? -->
         <h2 class="govuk-heading-m">What do you want support with?</h2>
 
-
-        <dl class="govuk-summary-list">
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
         <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -123,7 +126,11 @@
 
               {% if checked("support", "Technology training and support") %}
               <p class="govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Technology training and support</p>
-              {% endif %}   
+              {% endif %} 
+              
+              {% if checked("support", "Something else") %}
+              <p class="govuk-!-margin-bottom-2 govuk-!-font-weight-bold">{{ data['support-custom'] }}</p>
+              {% endif %}  
             </dt>
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">
@@ -138,23 +145,13 @@
           </div>
 
         </dl>
-        <div class="govuk-!-margin-bottom-9">
-
-        </div>
 
         <!-- OK to send -->
-        <h2 class="govuk-heading-m">Now send your support query</h2>
-
-        <p class="govuk-body">By submitting you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
-
-        <form action="/form-handler" method="post" novalidate>
-
+        <form action="/ghwt-support-submitted" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
-
           <button class="govuk-button" data-module="govuk-button">
-            Accept and send
+            Submit
           </button>
-
         </form>
 
         <a class="govuk-back-link" href="/ghwt-support-part3-support-needs-level2">Back</a>

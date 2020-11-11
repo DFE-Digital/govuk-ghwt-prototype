@@ -79,7 +79,7 @@
 
 
             <div class="govuk-form-group">
-              <label class="govuk-label" for="work-email">
+              <label class="govuk-label" for="email">
                 Your email address
               </label>
               <div id="email-hint" class="govuk-hint">
@@ -88,12 +88,12 @@
               <!-- <span id="email-error" class="govuk-error-message">
                 <span class="govuk-visually-hidden">Error:</span> Enter an email address in the correct format, like name@example.com
               </span> -->
-              <input class="govuk-input" id="work-email" name="work-email" type="email" spellcheck="false" aria-required="true" aria-describedby="email-hint email-error" autocomplete="email" {{ data['work-email'] }}>
+              <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-required="true" aria-describedby="email-hint email-error" autocomplete="email" {{ data['email'] }}>
             </div>
 
 
             <div class="govuk-form-group">
-              <label class="govuk-label" for="work-telephone-number">
+              <label class="govuk-label" for="telephone-number">
                 Your phone number
               </label>
               <div id="phone-hint" class="govuk-hint">
@@ -102,7 +102,7 @@
               <!-- <span id="phone-error" class="govuk-error-message">
                 <span class="govuk-visually-hidden">Error:</span> Enter an email address in the correct format, like name@example.com
               </span> -->
-              <input class="govuk-input govuk-input--width-20" id="work-telephone-number" name="work-telephone-number" aria-required="true" aria-describedby="phone-hint phone-error" type="tel" autocomplete="tel" {{ data['work-telephone-number'] }}>
+              <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" aria-required="true" aria-describedby="phone-hint phone-error" type="tel" autocomplete="tel" {{ data['telephone-number'] }}>
 
           </fieldset>
         </div>
@@ -115,8 +115,11 @@
         </button>
       </div>
     </form>
-
-    <a class="govuk-back-link" href="/ghwt-support-part1-describe-additional">Back</a>
+    {% if checked("describe", "I'm none of the above") %}
+     <a class="govuk-back-link" href="/ghwt-support-part1-describe">Back</a>
+    {% else %}
+     <a class="govuk-back-link" href="/ghwt-support-part1-describe-additional">Back</a>
+    {% endif %}
     </div>
   </div>
 {% endblock %}
