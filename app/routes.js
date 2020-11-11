@@ -28,11 +28,16 @@ router.use(function (req, res, next) {
 })
 
 // output url for session data
-router.get('/start', function (req, res, next) {
+
+// router.get('/ghwt-support-part3-support-needs-level2', function(req, res) {
+//   res.render('/ghwt-support-part3-support-needs-level2', { 'support-user-entry' : 'Foo' });
+// });
+
+router.get('/layout', function (req, res, next) {
   res.send('you viewed this page ' + req.session.views['/ghwt-support-confirm'] + ' times')
 })
 
-router.get('/start', function (req, res, next) {
+router.get('/layout', function (req, res, next) {
   res.send('you viewed this page ' + req.session.views['/ghwt-support-part1-describe'] + ' times')
 })
 
