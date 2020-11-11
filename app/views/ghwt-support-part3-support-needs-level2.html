@@ -47,32 +47,19 @@
         class="govuk-!-margin-bottom-6"
         id="current-question"
       >
+
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="hint-e496a843">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <span class="govuk-caption-l"
+              <h1 class="govuk-label-wrapper">
+                <span class="govuk-caption-l"
                 >Get support</span
               >
-              <h1 class="govuk-fieldset__heading">
-                Can you tell us more about your question or request?
-              </h1>
-            </legend>
-            
-            <div
-              id="hint-e496a843"
-              class="govuk-hint govuk-!-margin-bottom-3"
-            ></div>
-
-            <div class="govuk-form-group">
-                <label class="govuk-label govuk-label--s" for="support-user-entry">
-                  This is the label
+                <label class="govuk-label govuk-label--l" for="support-user-entry">
+                  Can you tell us more about your question or request?
                 </label>
+              </h1>
               <textarea class="govuk-textarea" id="support-user-entry" name="support-user-entry" rows="5" {{ data['support-user-entry'] }}></textarea>
             </div>
-
-
-          </fieldset>
-        </div>
+            
        
         <button
           data-module="govuk-button"
