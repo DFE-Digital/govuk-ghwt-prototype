@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Get help with technology",
+    serviceUrl: "#",
+    containerClasses: "govuk-width-container",
+    navigation: [
+      {
+        href: "#1",
+        text: "Guidance",
+        active: true
+      },
+      {
+        href: "#2",
+        text: "Sign in"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/start">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/ghwt-support-start">Get support</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Please contact your school, college or local authority for support
+      </h1>
+
+      <p>The Get help with technology scheme is open to schools, colleges and local authorities only.</p> 
+      <p>Parents, carers and pupils cannot apply for devices through this scheme themselves. Please contact your school or college to discuss your options for accessing remote education.</p>
+      <p>If you have received a device from your school, college or local authority and need help with it, please contact the person who gave it to you. These guides may also be helpful to you:</p>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="#">Getting started with your Microsoft Windows device</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Getting started with your Google Chromebook</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">How to get started with your 4G wireless router</a>
+        </li>
+      </ul>
+    </div>
+
+
+  </div>
+{% endblock %}
