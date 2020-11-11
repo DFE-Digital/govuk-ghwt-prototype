@@ -39,7 +39,7 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column">
 
     <form class="form" action="/ghwt-support-part3-support-needs-level2" method="post">
       <div
@@ -62,7 +62,7 @@
             <div
               id="hint-support"
               class="govuk-hint govuk-!-margin-bottom-3"
-            >Please select the most relevant to your query</div>
+            >Please select all of the options that apply</div>
 
             <div class="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
@@ -112,7 +112,7 @@
                 <label
                   for="support-2"
                   class="govuk-label govuk-checkboxes__label"
-                  >Digital education platforms</label
+                  >Digital education platforms (G Suite for Education and Office 365 Education)</label
                 >
               </div>
 
@@ -129,7 +129,24 @@
                 <label
                   for="support-3"
                   class="govuk-label govuk-checkboxes__label"
-                  >Technology training and support</label
+                  >Technology training and support for schools and colleges</label
+                >
+              </div>
+
+              <div class="govuk-checkboxes__item">
+                <input
+                  type="checkbox"
+                  name="support"
+                  id="support-4"
+                  value="Something else"
+                  class="govuk-checkboxes__input"
+                  {{ checked("support", "Something else") }}
+                />
+
+                <label
+                  for="support-4"
+                  class="govuk-label govuk-checkboxes__label"
+                  >Something else</label
                 >
               </div>
 
