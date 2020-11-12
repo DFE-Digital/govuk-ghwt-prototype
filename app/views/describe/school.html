@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Get help with technology",
+    serviceUrl: "#",
+    containerClasses: "govuk-width-container",
+    navigation: [
+      {
+        href: "#1",
+        text: "Guidance",
+        active: true
+      },
+      {
+        href: "#2",
+        text: "Sign in"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/start">Get support</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/contact" method="post">
+
+      <div
+        class="govuk-!-margin-bottom-6"
+        id="current-question"
+      >
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend
+              class="govuk-fieldset__legend govuk-fieldset__legend--l"
+            >
+              <span class="govuk-caption-l"
+                >Get support</span
+              >
+              <h1 class="govuk-fieldset__heading">
+                Which school do you work for?
+              </h1>
+            </legend>
+            
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="school-name">
+                School name
+              </label>
+              <!-- <span id="school-name-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter your full name
+              </span> -->
+              <input class="govuk-input govuk-!-width-three-quarters" id="school-name" name="school-name" type="text" spellcheck="false" autocomplete="false" {{ data['school-name'] }}>
+              <!-- <input class="govuk-input govuk-input--error" id="school-name" name="school-name" type="text" spellcheck="false" aria-describedby="school-name-error" autocomplete="name"></div> -->
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="school-urn">
+                What&rsquo;s your school&rsquo;s URN?
+                </label>
+
+                <div id="urn-hint" class="govuk-hint">
+                This 6-digit number helps us to locate your school
+                </div>
+                
+              <!-- <span id="urn-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter the correct format (URN is a number)
+              </span> -->
+              <input class="govuk-input govuk-input--width-10" id="school-urn" name="school-urn" type="text" spellcheck="false" aria-describedby="urn-hint" pattern="[0-9]*" inputmode="numeric" {{ data['school-urn'] }}>
+            </div>
+
+          </fieldset>
+        </div>
+       
+        <button
+          data-module="govuk-button"
+          class="govuk-button"
+        >
+          Next
+        </button>
+      </div>
+    </form>
+
+    <a class="govuk-back-link" href="/describe">Back</a>
+   
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <aside role="complementary">
+
+        <h2 class="govuk-heading-m" id="subsection-title">
+        How can I find my school&rsquo;s URN?
+        </h2>
+        <p>
+        Your URN is your school&rsquo;s 6-digit Unique Reference Number. You can find this by searching for your school on the <a href="https://get-information-schools.service.gov.uk/">Get information about schools</a> website.
+        </p>
+  </aside>
+    </div>
+
+  </div>
+{% endblock %}
+
+
+
+
+

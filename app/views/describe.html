@@ -46,7 +46,6 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-
         <form class="form" action="/contact" method="post">
 
           <div
@@ -54,7 +53,7 @@
             id="current-question"
           >
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" aria-describedby="hint-e496a843">
+              <fieldset class="govuk-fieldset">
                 <legend
                   class="govuk-fieldset__legend govuk-fieldset__legend--l"
                 >
@@ -66,11 +65,6 @@
                   </h1>
                 </legend>
 
-                <div
-                  id="hint-e496a843"
-                  class="govuk-hint govuk-!-margin-bottom-3"
-                ></div>
-
                 <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 
                   <div class="govuk-radios__item">
@@ -78,7 +72,7 @@
                       type="radio"
                       name="describe"
                       id="describe-0"
-                      value="I work for a local authority~/describe-additional.html"
+                      value="I work for a local authority~/describe/local-authority.html"
                       class="govuk-radios__input"
                       {{ checked("describe", "I work for a local authority") }}
                     />
@@ -95,7 +89,7 @@
                       type="radio"
                       name="describe"
                       id="describe-1"
-                      value="I work for an academy trust~/describe-additional.html"
+                      value="I work for an academy trust~/describe/academy-trust.html"
                       class="govuk-radios__input"
                       {{ checked("describe", "I work for an academy trust") }}
                     />
@@ -112,7 +106,7 @@
                       type="radio"
                       name="describe"
                       id="describe-2"
-                      value="I work for a school~/describe-additional.html"
+                      value="I work for a school~/describe/school.html"
                       class="govuk-radios__input"
                       {{ checked("describe", "I work for a school") }}
                     />
@@ -129,7 +123,7 @@
                       type="radio"
                       name="describe"
                       id="describe-3"
-                      value="I work for a college~/describe-additional.html"
+                      value="I work for a college~/describe/college.html"
                       class="govuk-radios__input"
                       {{ checked("describe", "I work for a college") }}
                     />

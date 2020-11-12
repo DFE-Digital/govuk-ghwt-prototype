@@ -86,28 +86,5 @@
     <a class="govuk-back-link" href="/describe">Back</a>
    
     </div>
-
-    <div class="govuk-grid-column-one-third">
-      <aside role="complementary">
-
-        <h2 class="govuk-heading-m" id="subsection-title">
-        {% if checked("describe", "I work for a la") %}
-        How can I find my la&rsquo;s URN?
-        {% endif %}
-        {% if checked("describe", "I work for a college") %}
-        How can I find my college&rsquo;s UKPRN?
-        {% endif %}
-      </h2>
-      <p>
-      {% if checked("describe", "I work for a la") %}
-        Your URN is your la&rsquo;s 6-digit Unique Reference Number. You can find this by searching for your la on the <a href="https://get-information-schools.service.gov.uk/">Get information about las</a> website.
-      {% endif %}
-      {% if checked("describe", "I work for a college") %}
-        Your UKPRN is your college&rsquo;s 8-digit UK Provider Reference number that always starts with a 1. You can find this by searching for your college on the <a href="https://get-information-schools.service.gov.uk/">Get information about las</a> website.
-      {% endif %}
-    </p>
-  </aside>
-    </div>
-
   </div>
 {% endblock %}
