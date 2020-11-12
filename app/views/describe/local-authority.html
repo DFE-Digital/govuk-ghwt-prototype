@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Get help with technology",
+    serviceUrl: "#",
+    containerClasses: "govuk-width-container",
+    navigation: [
+      {
+        href: "#1",
+        text: "Guidance",
+        active: true
+      },
+      {
+        href: "#2",
+        text: "Sign in"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/start">Get support</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/contact" method="post">
+
+      <div
+        class="govuk-!-margin-bottom-6"
+        id="current-question"
+      >
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend
+              class="govuk-fieldset__legend govuk-fieldset__legend--l"
+            >
+              <span class="govuk-caption-l"
+                >Get support</span
+              >
+              <h1 class="govuk-fieldset__heading">
+                Which local authority do you work for?
+              </h1>
+            </legend>
+            
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="la-name">
+                Local authority name
+              </label>
+              <!-- <span id="la-name-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter your full name
+              </span> -->
+              <input class="govuk-input govuk-!-width-three-quarters" id="la-name" name="la-name" type="text" spellcheck="false" autocomplete="false" {{ data['la-name'] }}>
+              <!-- <input class="govuk-input govuk-input--error" id="la-name"" name="la-name"" type="text" spellcheck="false" aria-describedby="la-name-error" autocomplete="name"></div> -->
+            </div>
+
+          </fieldset>
+        </div>
+       
+        <button
+          data-module="govuk-button"
+          class="govuk-button"
+        >
+          Next
+        </button>
+      </div>
+    </form>
+
+    <a class="govuk-back-link" href="/describe">Back</a>
+   
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <aside role="complementary">
+
+        <h2 class="govuk-heading-m" id="subsection-title">
+        {% if checked("describe", "I work for a la") %}
+        How can I find my la&rsquo;s URN?
+        {% endif %}
+        {% if checked("describe", "I work for a college") %}
+        How can I find my college&rsquo;s UKPRN?
+        {% endif %}
+      </h2>
+      <p>
+      {% if checked("describe", "I work for a la") %}
+        Your URN is your la&rsquo;s 6-digit Unique Reference Number. You can find this by searching for your la on the <a href="https://get-information-schools.service.gov.uk/">Get information about las</a> website.
+      {% endif %}
+      {% if checked("describe", "I work for a college") %}
+        Your UKPRN is your college&rsquo;s 8-digit UK Provider Reference number that always starts with a 1. You can find this by searching for your college on the <a href="https://get-information-schools.service.gov.uk/">Get information about las</a> website.
+      {% endif %}
+    </p>
+  </aside>
+    </div>
+
+  </div>
+{% endblock %}
