@@ -57,9 +57,9 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if checked("describe", "I'm none of the above") %}
-              {{ data['describe-custom'] }}
+                {{ data['describe-custom'] }}
               {% else %}
-              {{ data['describe'] }}
+                {{ data['describe'] }}
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -68,6 +68,68 @@
               </a>
             </dd>
           </div>
+          {% if not checked("describe", "I'm none of the above") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              {% if checked("describe", "I work for a local authority") %}
+                Local authority name
+              {% endif %}
+              {% if checked("describe", "I work for an academy trust") %}
+                Academy name
+              {% endif %}  
+              {% if checked("describe", "I work for a school") %}
+                School name 
+                {% if data['school-urn'] %}<br />
+                  URN
+                {% endif %}
+              {% endif %}                  
+              {% if checked("describe", "I work for a college") %}
+                College name 
+                {% if data['college-ukprn'] %}<br />
+                  UKPRN
+                {% endif %}
+              {% endif %}
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if checked("describe", "I work for a local authority") %}
+                {{ data['la-name'] }}
+              {% endif %}  
+              {% if checked("describe", "I work for an academy trust") %}
+                {{ data['academy-name'] }}
+              {% endif %}  
+              {% if checked("describe", "I work for a school") %}
+                {{ data['school-name'] }}<br />
+                {{ data['school-urn'] }}
+              {% endif %}  
+              {% if checked("describe", "I work for a college") %}
+                {{ data['college-name'] }}<br />
+                {{ data['college-ukprn'] }}
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              {% if checked("describe", "I work for a local authority") %}
+              <a class="govuk-link" href="/describe/local-authority">
+                Change<span class="govuk-visually-hidden"> local authority details"</span>
+              </a>
+              {% endif %}  
+              {% if checked("describe", "I work for an academy trust") %}
+              <a class="govuk-link" href="/describe/academy-trust">
+                Change<span class="govuk-visually-hidden"> academy trust details"</span>
+              </a>
+              {% endif %}  
+              {% if checked("describe", "I work for a school") %}
+              <a class="govuk-link" href="/describe/school">
+                Change<span class="govuk-visually-hidden"> school details"</span>
+              </a>
+              {% endif %}  
+              {% if checked("describe", "I work for a college") %}
+              <a class="govuk-link" href="/describe/college">
+                Change<span class="govuk-visually-hidden"> college details</span>
+              </a>
+              {% endif %}
+            </dd>
+          </div>
+          {% endif %}
         </dl>
 
         <!-- Contact details -->
