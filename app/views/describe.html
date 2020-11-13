@@ -71,6 +71,23 @@
                     <input
                       type="radio"
                       name="describe"
+                      id="describe-2"
+                      value="I work for a school~/describe/school.html"
+                      class="govuk-radios__input"
+                      {{ checked("describe", "I work for a school") }}
+                    />
+
+                    <label
+                      for="describe-2"
+                      class="govuk-label govuk-radios__label"
+                      >I work for a school or single-academy trust</label
+                    >
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input
+                      type="radio"
+                      name="describe"
                       id="describe-0"
                       value="I work for a local authority~/describe/local-authority.html"
                       class="govuk-radios__input"
@@ -97,24 +114,7 @@
                     <label
                       for="describe-1"
                       class="govuk-label govuk-radios__label"
-                      >I work for an academy trust</label
-                    >
-                  </div>
-
-                  <div class="govuk-radios__item">
-                    <input
-                      type="radio"
-                      name="describe"
-                      id="describe-2"
-                      value="I work for a school~/describe/school.html"
-                      class="govuk-radios__input"
-                      {{ checked("describe", "I work for a school") }}
-                    />
-
-                    <label
-                      for="describe-2"
-                      class="govuk-label govuk-radios__label"
-                      >I work for a school or single-academy trust</label
+                      >I work for a multi-academy trust</label
                     >
                   </div>
 
