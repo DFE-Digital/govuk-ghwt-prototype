@@ -1,22 +1,18 @@
 {% extends "_email.html" %}
 
-let title = 
 {% if checked("describe", "I work for a local authority") %}
-{{ data['la-name'] }}
+  {% set title = "Local authority: {{ data['la-name'] }} " %}
 {% endif %}  
 {% if checked("describe", "I work for an academy trust") %}
-{{ data['academy-name'] }}
+  {% set title = "Multi-academy: data['academy-name']" %}
 {% endif %}  
 {% if checked("describe", "I work for a school") %}
-{{ data['school-name'] }}<br />
-{{ data['school-urn'] }}
+  {% set title = "School: {{ data['school-name'] }}" %}
 {% endif %}  
 {% if checked("describe", "I work for a college") %}
-{{ data['college-name'] }}<br />
-{{ data['college-ukprn'] }}
+  {% set title = "College: data['college-name']" %}
 {% endif %}
 
-{% set title = title %}
 {% set from = data['email'] %}
 
 {% block content %}
