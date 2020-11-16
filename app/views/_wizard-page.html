@@ -37,23 +37,25 @@
 {% endblock %}
 
 {% block content %}
+  {% block banner %}{% endblock %}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form method="post" action="{{ paths.current }}">
-          {% block form %}{% endblock %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% block page %}{% endblock %}
 
-          {{ govukButton({
-            html: buttonText if buttonText else 'Next'
-          }) }}
-        </form>
+      <!-- {{ govukButton({
+        text: buttonText if buttonText else 'Continue',
+        href: paths.next,
+        classes: 'govuk-!-margin-top-6'
+      }) }} -->
 
-        {% block pageNavigation %}
-          {{ govukBackLink({
-             href: paths.back
-          }) if paths.back }}
-        {% endblock %}
-      </div>
-    </div>
-
+      {% block pageNavigation %}
+        {{ govukBackLink({
+            href: paths.back
+        }) }}
 {% endblock %}
+    </div>
+  </div>
+{% endblock %}
+
+
