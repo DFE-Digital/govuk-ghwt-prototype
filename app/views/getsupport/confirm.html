@@ -4,39 +4,26 @@
 Get Support: Send request
 {% endblock %}
 
-{% block header %}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Get help with technology",
-    serviceUrl: "#",
-    containerClasses: "govuk-width-container",
-    navigation: [
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBreadcrumbs({
+    items: [
       {
-        href: "#1",
-        text: "Guidance",
-        active: true
+        text: "Home",
+        href: "/"
       },
       {
-        href: "#2",
-        text: "Sign in"
+        text: "Get support",
+        href: "/getsupport"
       }
     ]
   }) }}
-{% endblock %}
-
-{% block beforeContent %}
-<div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/">Home</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/start"
-        >Get support</a
-      >
-    </li>
-  </ol>
-</div>
 {% endblock %}
 
 {% block content %}
@@ -65,7 +52,7 @@ Get Support: Send request
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/describe">
+              <a class="govuk-link" href="/getsupport/describe">
                 Change<span class="govuk-visually-hidden"> answer to "Which of these best describes you?"</span>
               </a>
             </dd>
@@ -111,22 +98,22 @@ Get Support: Send request
             </dd>
             <dd class="govuk-summary-list__actions">
               {% if checked("describe", "I work for a local authority") %}
-              <a class="govuk-link" href="/describe/local-authority">
+              <a class="govuk-link" href="/getsupport/describe/local-authority">
                 Change<span class="govuk-visually-hidden"> local authority details"</span>
               </a>
               {% endif %}  
               {% if checked("describe", "I work for an academy trust") %}
-              <a class="govuk-link" href="/describe/academy-trust">
+              <a class="govuk-link" href="/getsupport/describe/academy-trust">
                 Change<span class="govuk-visually-hidden"> academy trust details"</span>
               </a>
               {% endif %}  
               {% if checked("describe", "I work for a school") %}
-              <a class="govuk-link" href="/describe/school">
+              <a class="govuk-link" href="/getsupport/describe/school">
                 Change<span class="govuk-visually-hidden"> school details"</span>
               </a>
               {% endif %}  
               {% if checked("describe", "I work for a college") %}
-              <a class="govuk-link" href="/describe/college">
+              <a class="govuk-link" href="/getsupport/describe/college">
                 Change<span class="govuk-visually-hidden"> college details</span>
               </a>
               {% endif %}
@@ -146,7 +133,7 @@ Get Support: Send request
                 {{ data['full-name'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/contact">
+                <a class="govuk-link" href="/getsupport/contact">
                 Change<span class="govuk-visually-hidden"> name</span>
                 </a>
             </dd>
@@ -161,7 +148,7 @@ Get Support: Send request
               <p class="govuk-body">{{ data['telephone-number'] }}</p>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/contact">
+              <a class="govuk-link" href="/getsupport/contact">
                 Change<span class="govuk-visually-hidden"> contact details</span>
               </a>
             </dd>
@@ -199,7 +186,7 @@ Get Support: Send request
                 </p>
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/support-details">
+                <a class="govuk-link" href="/getsupport/support-details">
                 Change<span class="govuk-visually-hidden"> Support query details</span>
                 </a>
               </dd>
@@ -207,14 +194,14 @@ Get Support: Send request
         </dl>
 
         <!-- OK to send -->
-        <form action="/submitted" method="post" novalidate>
+        <form action="/getsupport/submitted" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
           <button class="govuk-button" data-module="govuk-button">
             Submit
           </button>
         </form>
 
-        <a class="govuk-back-link" href="/support-details">Back</a>
+        <a class="govuk-back-link" href="/getsupport/support-details">Back</a>
 
       </div>
     </div>

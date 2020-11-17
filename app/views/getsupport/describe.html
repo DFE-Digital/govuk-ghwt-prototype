@@ -4,39 +4,26 @@
   Get Support: Which of these best describes you?
 {% endblock %}
 
-{% block header %}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Get help with technology",
-    serviceUrl: "#",
-    containerClasses: "govuk-width-container",
-    navigation: [
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBreadcrumbs({
+    items: [
       {
-        href: "#1",
-        text: "Guidance",
-        active: true
+        text: "Home",
+        href: "/"
       },
       {
-        href: "#2",
-        text: "Sign in"
+        text: "Get support",
+        href: "/getsupport"
       }
     ]
   }) }}
-{% endblock %}
-
-{% block beforeContent %}
-<div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/">Home</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/start"
-        >Get support</a
-      >
-    </li>
-  </ol>
-</div>
 {% endblock %}
 
 {% block content %}
@@ -46,7 +33,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form class="form" action="/contact" method="post">
+        <form class="form" action="/getsupport/contact" method="post">
 
           <div
             class="govuk-!-margin-bottom-6"
@@ -72,7 +59,7 @@
                       type="radio"
                       name="describe"
                       id="describe-0"
-                      value="I work for a school~/describe/school.html"
+                      value="I work for a school~/getsupport/describe/school.html"
                       class="govuk-radios__input"
                       {{ checked("describe", "I work for a school") }}
                     />
@@ -89,7 +76,7 @@
                       type="radio"
                       name="describe"
                       id="describe-1"
-                      value="I work for an academy trust~/describe/academy-trust.html"
+                      value="I work for an academy trust~/getsupport/describe/academy-trust.html"
                       class="govuk-radios__input"
                       {{ checked("describe", "I work for an academy trust") }}
                     />
@@ -106,7 +93,7 @@
                       type="radio"
                       name="describe"
                       id="describe-2"
-                      value="I work for a local authority~/describe/local-authority.html"
+                      value="I work for a local authority~/getsupport/describe/local-authority.html"
                       class="govuk-radios__input"
                       {{ checked("describe", "I work for a local authority") }}
                     />
@@ -123,7 +110,7 @@
                       type="radio"
                       name="describe"
                       id="describe-3"
-                      value="I work for a college~/describe/college.html"
+                      value="I work for a college~/getsupport/describe/college.html"
                       class="govuk-radios__input"
                       {{ checked("describe", "I work for a college") }}
                     />
@@ -140,7 +127,7 @@
                       type="radio"
                       name="describe"
                       id="describe-4"
-                      value="I'm a parent, guardian, pupil or care leaver~/parent-guardian-pupil-care-leaver.html"
+                      value="I'm a parent, guardian, pupil or care leaver~/getsupport/parent-guardian-pupil-care-leaver.html"
                       class="govuk-radios__input"
                       {{ checked("describe", "I'm a parent, guardian, pupil or care leaver") }}
                     />
@@ -192,40 +179,7 @@
           </div>
         </form>
 
-        <a class="govuk-back-link" href="/start">Back</a>
-
-        <!-- PROTOTYPE CODE <form action="/docs/examples/pass-data/vehicle-check-answers" method="post" class="form"> -->
-        <!-- <form
-          novalidate
-          action="/hc/en-us/requests"
-          method="post"
-          id="new_request"
-          class="form"
-          data-form=""
-          data-form-type="request"
-          accept-charset="UTF-8"
-        >
-          <input name="utf8" type="hidden" value="&#x2713;" />
-          <input type="hidden" name="authenticity_token" value="" />
-
-          <fieldset class="govuk-fieldset" aria-describedby="form-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h1 class="govuk-fieldset__heading">Submit a request</h1>
-            </legend>
-            <span id="form-hint" class="govuk-hint">
-              A member of our support staff will respond as soon as possible.
-            </span>
-          </fieldset>
-
-          <button
-            data-prevent-double-click="true"
-            class="govuk-button"
-            data-module="govuk-button"
-          >
-            Confirm and send
-          </button>
-          <input type="submit" name="commit" value="Submit" />
-        </form> -->
+        <a class="govuk-back-link" href="/getsupport">Back</a>
 
       </div>
     </div>

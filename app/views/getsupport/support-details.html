@@ -1,47 +1,36 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Get Support: Can you tell us more about your question or request?
-{% endblock %}
-
-{% block header %}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Get help with technology",
-    serviceUrl: "#",
-    containerClasses: "govuk-width-container",
-    navigation: [
-      {
-        href: "#1",
-        text: "Guidance",
-        active: true
-      },
-      {
-        href: "#2",
-        text: "Sign in"
-      }
-    ]
-  }) }}
+  Get Support: Can you tell us more about your question or request?
 {% endblock %}
 
 {% block beforeContent %}
-  <div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="/">Home</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="/start">Get support</a>
-      </li>
-    </ol>
-  </div>
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "/"
+      },
+      {
+        text: "Get support",
+        href: "/getsupport"
+      }
+    ]
+  }) }}
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="/confirm" method="post">
+    <form class="form" action="/getsupport/confirm" method="post">
 
       <div
         class="govuk-!-margin-bottom-6"
@@ -71,7 +60,7 @@ Get Support: Can you tell us more about your question or request?
       </div>
     </form>
 
-    <a class="govuk-back-link" href="/support-needs">Back</a>
+    <a class="govuk-back-link" href="/getsupport/support-needs">Back</a>
 
   </div>
 

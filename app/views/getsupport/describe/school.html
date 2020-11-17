@@ -4,44 +4,33 @@
 Get Support: Which school do you work for?
 {% endblock %}
 
-{% block header %}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Get help with technology",
-    serviceUrl: "#",
-    containerClasses: "govuk-width-container",
-    navigation: [
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBreadcrumbs({
+    items: [
       {
-        href: "#1",
-        text: "Guidance",
-        active: true
+        text: "Home",
+        href: "/"
       },
       {
-        href: "#2",
-        text: "Sign in"
+        text: "Get support",
+        href: "/getsupport"
       }
     ]
   }) }}
-{% endblock %}
-
-{% block beforeContent %}
-  <div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="/">Home</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="/start">Get support</a>
-      </li>
-    </ol>
-  </div>
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="/contact" method="post">
+    <form class="form" action="/getsupport/contact" method="post">
 
       <div
         class="govuk-!-margin-bottom-6"
@@ -98,7 +87,7 @@ Get Support: Which school do you work for?
       </div>
     </form>
 
-    <a class="govuk-back-link" href="/describe">Back</a>
+    <a class="govuk-back-link" href="/getsupport/describe">Back</a>
    
     </div>
 

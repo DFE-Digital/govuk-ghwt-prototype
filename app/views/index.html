@@ -5,84 +5,133 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
-{% block header %}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Get help with technology",
-    serviceUrl: "#",
-    containerClasses: "govuk-width-container",
-    navigation: [
-      {
-        href: "#1",
-        text: "Guidance",
-        active: true
-      },
-      {
-        href: "#2",
-        text: "Sign in"
-      }
-    ]
-  }) }}
-{% endblock %}
 
 {% block beforeContent %}
-  <div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="/">Home</a>
-      </li>
-    </ol>
-  </div>
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+
 {% endblock %}
 
-{% block content %}
 
+{% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
     <h1 class="govuk-heading-xl">
-      {% if serviceName %} {{ serviceName }} {% endif %}
+      Get help with technology
     </h1>
 
-    <p>The Get Support form collects support data for connecting to the ZenDesk ticket system</p>
-    <p>Support is provided for Local Authorities, schools, colleges, hospital schools and priority students in these contexts. Support needs for indivduals will be directed on how to get help by connecting with relevant authorities.</p>
-    <a href="/start" title="ghwt-start">Form start ></a>
-
+    <p class="govuk-body">
+      Information for local authorities, academy trusts and schools about the devices, internet access
+      and support available to provide remote education and access to children’s social care during
+      coronavirus (COVID-19).
+    </p>
   </div>
 </div>
 
-  <!-- <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
+<div class="govuk-grid-row">
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+      <a class="govuk-link" href="/devices/how-to-order">Get laptops and tablets</a>
+    </h2>
+    <p class="govuk-body">
+      Find out how to prepare to order laptops and tablets for disadvantaged children in certain year
+      groups when schools are affected by disruption to face-to-face education due to coronavirus (COVID-19).
+    </p>
 
-      <h2 class="govuk-heading-m">About this page</h2>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+      <a class="govuk-link" href="/devices">Get support guides for laptops, tablets and 4G wireless routers</a>
+    </h2>
 
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
+    <p class="govuk-body">
+      Get information about setting up, distributing and managing the laptops, tablets and 4G wireless routers
+      you’ve received. You can also find guides to share with children and young people to help them use the devices.
+    </p>
 
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/docs/tutorials-and-examples">Example pages and documentation</a>
-        </li>
-        <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        </li>
-      </ul>
-    </div>
-  </div> -->
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+      <a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/internet-access">Get internet access</a>
+    </h2>
+
+    <p class="govuk-body">
+      Find out how to get internet access for disadvantaged children and young people when schools are affected by disruption to face-to-face education. Learn about our schemes to increase data allowances on mobile devices and offer 4G wireless routers.
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2" data-service-section="digital-platforms">
+      <a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/digital-platforms">Get funding and support to set up a digital education platform</a>
+    </h2>
+
+    <p class="govuk-body">
+      Find out how to apply for government-funded support to access one of two free-to-use digital education platforms:
+      G Suite for Education or Office 365 Education.
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2" data-service-section="edtech">
+      <a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/EdTech-demonstrator-programme">Get free training and support to set up and use technology effectively</a>
+    </h2>
+
+    <p class="govuk-body">
+      Access funded advice, guidance and training from the EdTech demonstrators, a network of schools
+      and colleges expert in their use of technology. This may be helpful if you&rsquo;ve received devices
+      or support to set up a new digital platform through the Get help with technology programme,
+      or if you&rsquo;re developing your approach to remote education, reducing teacher workloads and improving pupil outcomes.
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+      Contact us
+    </h2>
+    
+    <p class="govuk-body-s">
+      If you work for a local authority, academy trust or school and you need help with any of the devices or services
+      offered by this programme, <a class="govuk-link" href="/getsupport">please contact us</a>.
+    </p>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+      Guidance you might find useful
+    </h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <!-- currently live -->
+      <li>
+        <a href="/devices/how-to-order" class="govuk-body-s">How and when you can order</a>
+      </li>
+      <li>
+        <a href="https://get-help-with-tech.education.gov.uk/devices/device-allocations" class="govuk-body-s">Device allocations</a>
+      </li>
+      <li>
+        <a href="https://get-help-with-tech.education.gov.uk/devices/preparing-microsoft-windows-laptops-and-tablets#preparing-laptops-and-tablets-ordered-with-dfe-settings-installed" class="govuk-body-s">Resetting Microsoft Windows devices</a>
+      </li>
+      
+      <!-- prototype only -->
+      <li>
+        <a href="https://get-help-with-tech.education.gov.uk/devices/preparing-microsoft-windows-laptops-and-tablets#requesting-local-admin-and-bios-passwords-and-installing-your-own-software-and-settings" class="govuk-body-s">Request local admin and BIOS passwords to install your own software</a>
+      </li>
+      <li>
+        <a href="https://get-help-with-tech.education.gov.uk/devices/device-allocations" class="govuk-body-s">How devices are allocated</a>
+      </li>
+      <li>
+        <a href="https://get-help-with-tech.education.gov.uk/about-bt-wifi" class="govuk-body-s">Internet access through free BT hotspots</a>
+      </li>
+      <li>
+        <a href="https://get-help-with-tech.education.gov.uk/about-increasing-mobile-data" class="govuk-body-s">Increasing data allowances on mobile devices</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
 {% endblock %}

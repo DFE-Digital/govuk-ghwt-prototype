@@ -1,47 +1,36 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Get Support: What do you want to know or get support with?
+  Get Support: What do you want to know or get support with?
 {% endblock %}
 
-{% block header %}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: "Get help with technology",
-    serviceUrl: "#",
-    containerClasses: "govuk-width-container",
-    navigation: [
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBreadcrumbs({
+    items: [
       {
-        href: "#1",
-        text: "Guidance",
-        active: true
+        text: "Home",
+        href: "/"
       },
       {
-        href: "#2",
-        text: "Sign in"
+        text: "Get support",
+        href: "/getsupport"
       }
     ]
   }) }}
 {% endblock %}
 
-{% block beforeContent %}
-  <div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="/">Home</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="/start">Get support</a>
-      </li>
-    </ol>
-  </div>
-{% endblock %}
-
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column">
+  <div class="govuk-grid-column-full">
 
-    <form class="form" action="/support-details" method="post">
+    <form class="form" action="/getsupport/support-details" method="post">
       <div
         class="govuk-!-margin-bottom-6"
         id="current-question"
@@ -149,14 +138,14 @@ Get Support: What do you want to know or get support with?
                   >Something else</label
                 >
               </div>
-              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-support-4">
+              <!-- <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-support-4">
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="support-custom">
                       Please provide details
                     </label>
                     <input class="govuk-input govuk-!-width-one-third" id="support-custom" name="support-custom" type="text" {{ data['support-custom'] }}>
                 </div>
-              </div>
+              </div> -->
 
             </div><!--end checkboxes-->
           </fieldset>
@@ -172,7 +161,7 @@ Get Support: What do you want to know or get support with?
       </div>
     </form>
 
-    <a class="govuk-back-link" href="/contact">Back</a>
+    <a class="govuk-back-link" href="/getsupport/contact">Back</a>
 
   </div>
   

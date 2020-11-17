@@ -1,0 +1,365 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Devices: Get support guides for laptops, tablets and 4G wireless routers
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "/"
+      },
+      {
+        text: "Get laptops and tablets"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        How and when to order laptops and tablets during coronavirus (COVID-19)
+      </h1>
+  
+      <p class="govuk-body">
+        Prepare to <a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/start">order laptops and tablets</a>
+        for disadvantaged children in certain year groups when schools are  affected by disruption to face-to-face
+        education due to coronavirus (COVID-19).
+      </p>
+  
+      <p class="govuk-body">
+        Find out <a href="https://www.gov.uk/guidance/get-laptops-and-tablets-for-children-who-cannot-attend-school-due-to-coronavirus-covid-19#who-can-get-laptops-and-tablets" class="govuk-link">who can get laptops and tablets</a>. We’re also providing <a href="https://get-help-with-tech.education.gov.uk/internet-access" class="govuk-link">internet connections</a> where they're needed.
+      </p>
+  
+      <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active">
+        <ol class="app-step-nav__steps">
+          <li class="app-step-nav__step" id="decide-who-will-place-orders" >
+            <div class="app-step-nav__header app-step-nav__header--non-clickable" data-position="1">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden">Step</span> 1
+                    </span>
+                  </span>
+                </span>
+  
+                <span class="js-step-title">
+                  Decide who will place orders
+                </span>
+              </h2>
+            </div>
+  
+            <div class="app-step-nav__panel" id="step-panel-decide-who-will-place-orders-1">
+              <p class="app-step-nav__paragraph">
+                Representatives from local authorities and academy trusts have been contacted by email. They’ve been asked to use the <a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/start">Get help with technology service</a> to tell us if they want to:
+              </p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>let schools place their own orders</li>
+                <li>place orders centrally on behalf of schools</li>
+              </ul>
+  
+              <p class="app-step-nav__paragraph">
+                They can adapt this choice individually for each school. Additional users from within a local authority or academy trust can be invited to provide this information through the Get help with technology service.
+              </p>
+              <p class="app-step-nav__paragraph">This is a different process than they may have followed to order devices between May and July 2020. This step must be completed before anyone can order.</p>
+            </div>
+  
+          </li>
+  
+          <li class="app-step-nav__step" id="nominate-people-to-manage-orders" >
+            <div class="app-step-nav__header app-step-nav__header--non-clickable" data-position="2">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden">Step</span> 2
+                    </span>
+                  </span>
+                </span>
+  
+                <span class="js-step-title">
+                  Nominate people to manage orders
+                </span>
+              </h2>
+            </div>
+  
+            <div class="app-step-nav__panel" id="step-panel-nominate-people-to-manage-orders-2">
+              <p class="app-step-nav__paragraph">
+                If local authorities and academy trusts choose to let schools place their own orders,
+                they can use the <a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/start">Get help with technology service</a> to nominate the headteacher or give the following information for an alternative contact at each school:
+              </p>
+  
+              <ul class="govuk-list govuk-list--bullet">
+                <li>name</li>
+                <li>email address</li>
+                <li>phone number</li>
+              </ul>
+  
+              <p class="app-step-nav__paragraph">
+                These contacts will have the option to invite up to 2 other people from their school to manage orders.
+              </p>
+              <p class="app-step-nav__paragraph">
+                We’ll ask if each school will require Chromebooks. If they do,
+                we'll ask for some technical information so they can be set up correctly when orders are placed.
+              </p>
+              <p class="app-step-nav__paragraph">See the <a class="govuk-link" href="#step-panel-choosing-devices-4">‘Choosing devices’</a> section below for information on what device types are available and the details we’ll ask for when ordering.</p>
+            </div>
+          </li>
+  
+          <li class="app-step-nav__step" id="prepare-to-place-an-order" >
+            <div class="app-step-nav__header app-step-nav__header--non-clickable" data-position="3">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden">Step</span> 3
+                    </span>
+                  </span>
+                </span>
+  
+                <span class="js-step-title">
+                  Prepare to place an order
+                </span>
+              </h2>
+            </div>
+  
+            <div class="app-step-nav__panel" id="step-panel-prepare-to-place-an-order-3">
+              <p class="app-step-nav__paragraph">
+                While devices may not be available to order immediately, we suggest all nominated contacts familiarise themselves with this process to prevent delays when ordering   does become available.
+              </p>
+              <p class="app-step-nav__paragraph">
+                When someone is nominated as responsible for placing orders, they’ll receive an email inviting
+                them to the <a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/start">Get help with technology service</a> where they can:
+              </p>
+  
+              <ul class="govuk-list govuk-list--bullet">
+                <li>amend existing contact information</li>
+                <li>add additional contacts to place orders</li>
+                <li>find out a school’s device allocation</li>
+              </ul>
+  
+              <p class="app-step-nav__paragraph">
+                The device allocation is the number of laptops and tablets we estimate are needed based on:
+              </p>
+  
+              <ul class="govuk-list govuk-list--bullet">
+                <li>the number of children in years 3 to 11</li>
+                <li>free school meals data</li>
+                <li>an estimate of the number of devices a school already has</li>
+              </ul>
+  
+              <p class="app-step-nav__paragraph">
+                This allocation can be used as part of preparing to deliver remote education. However, the exact
+                number and type of devices available will be confirmed at the time of ordering based on stock
+                availability and the extent of coronavirus restrictions.
+              </p>
+  
+              <p class="app-step-nav__paragraph">
+                <a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/devices/device-allocations">Find out about allocations</a> and what information is required if you would like to request additional devices for a school.
+              </p>
+  
+              <p class="app-step-nav__paragraph">
+                Local authorities and trusts managing the process on behalf of schools should contact them with details about the offer.
+              </p>
+            </div>
+          </li>
+  
+          <li class="app-step-nav__step" id="choosing-devices" >
+            <div class="app-step-nav__header app-step-nav__header--non-clickable" data-position="4">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden">Step</span> 4
+                    </span>
+                  </span>
+                </span>
+  
+              <span class="js-step-title">
+                  Choosing devices
+                </span>
+              </h2>
+            </div>
+  
+            <div class="app-step-nav__panel" id="step-panel-choosing-devices-4">
+              <p class="app-step-nav__paragraph">
+                The device types (depending on availability) will be:
+              </p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>
+                Microsoft Windows laptops
+                </li>
+                <li>
+                  Microsoft Windows tablets (with or without keyboards)
+                </li>
+                <li>
+                Google Chromebooks
+                </li>
+                <li>
+                Apple iPads
+                </li>
+              </ul>
+  
+              <p class="app-step-nav__paragraph">
+                View the <a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/devices/device-specification">full specifications</a> of these devices.
+              </p>
+  
+              <p class="app-step-nav__paragraph">
+                When ordering Microsoft devices, a selection can be made between:
+              </p>
+  
+              <ul class="govuk-list govuk-list--bullet">
+                <li>not having DfE settings installed - these ‘Standard’ devices can be configured with preferred safeguarding software and brought into an existing device management framework</li>
+                <li>having DfE settings installed - these ‘DfE Restricted’ devices are not configurable, with limitations on downloading certain software and changing the strict content filters that may prevent some browsers and conferencing tools from functioning</li>
+              </ul>
+  
+              <p class="app-step-nav__paragraph">
+                Read more information about <a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/devices/preparing-microsoft-windows-laptops-and-tablets">preparing Microsoft devices</a>.
+              </p>
+  
+              <p class="app-step-nav__paragraph">
+                When ordering Chromebooks, the following information needs to be added to the
+                <a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/start">Get help with technology service</a>
+                before orders can be placed:
+              </p>
+  
+              <ul class="govuk-list govuk-list--bullet">
+                <li>a school’s Google domain</li>
+                <li>a recovery email address</li>
+              </ul>
+  
+              <p class="app-step-nav__paragraph">
+                When ordering Apple devices, we'll require:
+              </p>
+  
+              <ul class="govuk-list govuk-list--bullet">
+                <li>
+                  an Apple School Manager (ASM) Organisation ID. This is a 7-8 digit number available when logged
+                  in to ASM. We recommend knowing this ID in advance to avoid any delay in the ordering process.
+                </li>
+              </ul>
+  
+              <p class="app-step-nav__paragraph">
+                If an education platform is not currently in use, schools, local authorities and academy trusts can apply
+                for DfE-funded support to get access to either G Suite for Education or Office 365 Education. More
+                information is available from
+                <a href="https://covid19.thekeysupport.com/covid-19/deliver-remote-learning/make-tech-work-you/digital-education-platform-hub/" class="govuk-link" target="_blank">The Key for School Leaders</a>.
+              </p>
+            </div>
+          </li>
+  
+          <li class="app-step-nav__step" id="place-an-order" >
+            <div class="app-step-nav__header app-step-nav__header--non-clickable" data-position="5">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle  app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden">Step</span> 5
+                    </span>
+                  </span>
+                </span>
+  
+                <span class="js-step-title">
+                  Place an order
+                </span>
+              </h2>
+            </div>
+  
+            <div class="app-step-nav__panel" id="step-panel-place-an-order-5">
+              <p class="app-step-nav__paragraph">
+                If face-to-face education at a school is disrupted due to coronavirus (such as a ‘bubble’ or year group being advised not to attend), schools can make us aware via the <a class="govuk-link" href="https://form.education.gov.uk/service/educational-setting-status">DfE educational settings status form</a> which is monitored daily.
+              </p>
+              <p class="app-step-nav__paragraph">
+                After reviewing form submissions against our allocation criteria, we'll email nominated contacts, inviting them to place an order. We're unable to accept any orders until this invitation has been sent and will reject any orders placed before it has been received.
+              </p>
+                <p class="app-step-nav__paragraph">
+                  As the form only captures certain circumstances, devices can also be requested by emailing COVID.TECHNOLOGY@education.gov.uk when a school:
+                </p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>
+                    is supporting a disadvantaged child in any year group who has been advised to shield because they (or someone they live with) are clinically extremely vulnerable
+                  </li>
+                  <li>is supporting a disadvantaged child living in another area who is unable to attend due to local travel restrictions</li>
+                </ul>
+  
+              <p class="app-step-nav__paragraph">
+                Please do not email any personally identifiable information about pupils that we do not need to process your support query. If we receive a request that contains such information, we’ll ask for it to be resent.
+              </p>
+  
+              <p class="app-step-nav__paragraph">
+                The full allocation can be ordered in one go or made in multiple orders.
+              </p>
+  
+              <p class="app-step-nav__paragraph">
+                Once a device selection has been made, the person placing the order will be asked to confirm delivery and contact details during the checkout process.
+              </p>
+  
+            </div>
+  
+          </li>
+  
+          <li class="app-step-nav__step js-step" id="receive-and-distribute-laptops-and-tablets" >
+            <div class="app-step-nav__header app-step-nav__header--non-clickable" data-position="6">
+              <h2 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden">Step</span> 6
+                    </span>
+                  </span>
+                </span>
+  
+                <span class="js-step-title">
+                  Receive and distribute laptops and tablets
+                </span>
+              </h2>
+            </div>
+  
+            <div class="app-step-nav__panel" id="step-panel-receive-and-distribute-laptops-and-tablets-6">
+              <p class="app-step-nav__paragraph">
+                Due to increased levels of demand, devices will be delivered to schools within 5 working days of an order being confirmed, subject to stock availability.
+              </p>
+  
+              <p class="app-step-nav__paragraph">
+                All devices will be fully owned by the schools or academy trusts who receive them. It will be the
+                responsibility of the school to lend the devices to those who need them.
+              </p>
+  
+              <p class="app-step-nav__paragraph">
+                After receiving devices and preparing them for use by children, schools can:
+              </p>
+  
+              <ul class="govuk-list govuk-list--bullet">
+                <li>arrange for them to be collected by families from school, or</li>
+                <li>organise for them to be delivered to children’s homes</li>
+              </ul>
+  
+              <p class="app-step-nav__paragraph">
+                All distribution and return of loan devices should be done in accordance with the <a href="https://www.gov.uk/find-coronavirus-local-restrictions" class="govuk-link"> social distancing guidelines relevant to your local area</a>.
+              </p>
+  
+              <p class="app-step-nav__paragraph">
+                The <a href="https://computacenterprod.service-now.com/dfe" class="govuk-link">Support Portal</a> provides information on how to request admin passwords for all DfE restricted devices. You can also report device faults and arrange a repair or replacement for laptops and tablets issued between May and August 2020 under warranty terms.
+              </p>
+  
+            </div>
+  
+          </li>
+  
+        </ol>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -13,24 +13,24 @@
 {% endblock %}
 
 {% block bodyStart %}
-  <dl class="govuk-email__header">
-    <div class="govuk-email__header-from">
-      <dt>From:</dt>
-      <dd><b> {{ from }}</b><dd>
-    </div>
-    <div class="govuk-email__header-subject">
-      <dt class="govuk-visually-hidden">Subject:</dt>
-      <dd>{{ title }}</dd>
-    </div>
-    <div class="govuk-email__header-to">
-      <dt>To:</dt>
-      <dd><b>COVID.TECHNOLOGY@education.gov.uk</b></dd>
-    </div>
-    <div class="govuk-email__header-date">
-      <dt class="govuk-visually-hidden">Date:</dt>
-      <dd>{{ "now" }}<dd>
-    </div>
-  </dl>
+<dl class="govuk-email__header">
+  <div class="govuk-email__header-from">
+    <dt class="govuk-visually-hidden">From:</dt>
+    <dd><b>COVID.TECHNOLOGY@education.gov.uk</b><dd>
+  </div>
+  <div class="govuk-email__header-subject">
+    <dt class="govuk-visually-hidden">Subject:</dt>
+    <dd>{{ title }}</dd>
+  </div>
+  <div class="govuk-email__header-to">
+    <dt>To:</dt>
+    <dd>{{ to }}</dd>
+  </div>
+  <div class="govuk-email__header-date">
+    <dt class="govuk-visually-hidden">Date:</dt>
+    <dd>{{ "now" }}<dd>
+  </div>
+</dl>
 {% endblock %}
 
 {% block header %}

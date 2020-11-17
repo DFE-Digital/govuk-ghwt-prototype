@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Devices: Get support guides for laptops, tablets and 4G wireless routers
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "/"
+      },
+      {
+        text: "Get support guides for laptops, tablets and 4G wireless routers",
+        href: "/devices"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            Get support guides for laptops, tablets and 4G wireless routers
+        </h1>
+  
+        <p class="govuk-body">Many vulnerable and disadvantaged children and young people in England do not have access to a laptop, tablet or internet connection. The Department for Education (DfE) is offering support to help children, young people and families access remote education and social care during coronavirus (COVID-19).</p>
+    
+        <p class="govuk-body">The DfE is working with delivery partners to supply local authorities, academy trusts and schools with <a class="govuk-link" href="https://www.gov.uk/guidance/get-help-with-technology-for-remote-education-during-coronavirus-covid-19">laptops, tablets and connectivity packages</a>.</p>
+    
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-font-size-24"><a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/devices/about-the-offer">About the offer</a></h3>
+  
+        <p class="govuk-body">Find out who is eligible for devices and why the DfE is providing them.</p>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-font-size-24"><a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/devices/device-allocations">Device allocations</a></h3>
+        
+        <p class="govuk-body">Find out how we estimated device requirements for each school and how to query an allocation.</p>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-font-size-24"><a class="govuk-link" href="/devices/how-to-order">How and when to order laptops and tablets</a></h3>
+        
+        <p class="govuk-body">Prepare to order laptops and tablets for disadvantaged children in certain year groups when schools are affected by disruption to face-to-face education due to coronavirus.</p>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-font-size-24"><a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/devices/device-specification">Device options and specifications</a></h3>
+        
+        <p class="govuk-body">Get the technical specifications of the devices for vulnerable and disadvantaged children and young people.</p>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-font-size-24"><a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/devices/preparing-microsoft-windows-laptops-and-tablets">Preparing Microsoft Windows laptops and tablets</a></h3>
+        
+        <p class="govuk-body">Guidance for Microsoft Windows devices provided with safeguarding and mobile device management software and how to install your own.</p>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-font-size-24"><a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/devices/preparing-chromebooks">Preparing Chromebooks</a></h3>
+        
+        <p class="govuk-body">Guidance on how to enrol Google Chromebooks on your domain, how to install Cisco Umbrella content filtering, and set up instructions for local authorities, trusts and schools.</p>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-font-size-24"><a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/devices/preparing-4g-wireless-routers">Preparing 4G routers</a></h3>
+        
+        <p class="govuk-body">Find out how 4G wireless routers are secured, how much data users get, how long the contract is and records you should keep.</p>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-font-size-24"><a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/devices/device-distribution-and-ownership">Device ownership and distribution</a></h3>
+        
+        <p class="govuk-body">Guidance on who owns devices, and information on insuring devices, asset management and loan agreements.</p>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-font-size-24"><a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/devices/support-and-maintenance">Support and maintenance</a></h3>
+        
+        <p class="govuk-body">Find out how to support your users, access additional support and deal with a faulty device.</p>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-font-size-24"><a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/devices/safeguarding-for-device-users">Safeguarding for device users</a></h3>
+        
+        <p class="govuk-body">Information on content filtering, privacy policies and mobile device management to ensure devices are used appropriately by young people and families.</p>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-font-size-24"><a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/devices/google-domain-for-care-leavers-and-children-with-social-worker">Set up a Google domain for care leavers</a></h3>
+        
+        <p class="govuk-body">Find out how local authorities can set up a Google domain for care leavers and children with a social worker.</p>
+        
+        
+        <h2 class="govuk-heading-l">Guidance to be shared with the children, families and young people using the devices</h2>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-font-size-24"><a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/devices/getting-started-with-your-microsoft-windows-device">Getting started with your Microsoft Windows device</a></h3>
+        
+        <p class="govuk-body">User guidance for Microsoft Windows devices to share with children, young people and their carers.</p>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-font-size-24"><a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/devices/getting-started-with-your-google-chromebook">Getting started with your Google Chromebook</a></h3>
+        
+        <p class="govuk-body">User guidance for Google Chromebooks to share with children, young people and their carers.</p>
+        
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-font-size-24"><a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/devices/4g-user-guidance">How to get started with your 4G wireless router</a></h3>
+        
+        <p class="govuk-body">User guidance for 4G wireless routers to share with children, young people and their carers.</p>
+  
+    </div>
+  </div>
+{% endblock %}

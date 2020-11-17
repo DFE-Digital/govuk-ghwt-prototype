@@ -1,0 +1,41 @@
+{% extends "_email.html" %}
+{% set to = data['email'] %}
+
+{% block content %}
+  <h2 class="govuk-heading-m">{{ title }}</h2>
+  <p class="govuk-body">Dear  {{ data['full-name'] }}</p>
+
+  <h2 class="govuk-heading-m">Get help with technology support</h2>
+
+  <p>Your request is bein handled. About you:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      {% if checked("describe", "I'm none of the above") %}
+        {{ data['describe-custom'] }}
+      {% else %}
+        {{ data['describe'] }}
+      {% endif %}
+    </li>
+    <li>
+      {% if checked("describe", "I work for a local authority") %}
+        Local authority name: {{ data['la-name'] }}
+      {% endif %}
+      {% if checked("describe", "I work for an academy trust") %}
+        Multi-academy trust name: {{ data['academy-name'] }}
+      {% endif %}  
+      {% if checked("describe", "I work for a school") %}
+        School or single-academy name: {{ data['school-name'] }}
+        {% if data['school-urn'] %}<br />
+          URN: {{ data['school-urn'] }}
+        {% endif %}
+      {% endif %}                  
+      {% if checked("describe", "I work for a college") %}
+        College name: {{ data['college-name'] }}
+        {% if data['college-ukprn'] %}<br />
+          UKPRN: {{ data['college-ukprn'] }}
+        {% endif %}
+      {% endif %}
+    </li>
+  </ul>
+
+{% endblock %}
