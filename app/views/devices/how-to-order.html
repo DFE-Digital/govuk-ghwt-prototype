@@ -4,6 +4,15 @@
   Devices: Get support guides for laptops, tablets and 4G wireless routers
 {% endblock %}
 
+{% block pageScripts %}
+<script src="/public/javascripts/step-by-step-nav.js"></script>
+<script type="text/javascript">
+    var $element = $('#step-by-step-navigation')
+    var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
+    stepByStepNavigation.start($element)
+  </script>
+{% endblock %}
+
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
@@ -42,10 +51,13 @@
         Find out <a href="https://www.gov.uk/guidance/get-laptops-and-tablets-for-children-who-cannot-attend-school-due-to-coronavirus-covid-19#who-can-get-laptops-and-tablets" class="govuk-link">who can get laptops and tablets</a>. We’re also providing <a href="https://get-help-with-tech.education.gov.uk/internet-access" class="govuk-link">internet connections</a> where they're needed.
       </p>
   
-      <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active">
+      <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
+      <!-- <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active"> -->
         <ol class="app-step-nav__steps">
-          <li class="app-step-nav__step" id="decide-who-will-place-orders" >
-            <div class="app-step-nav__header app-step-nav__header--non-clickable" data-position="1">
+          <!-- <li class="app-step-nav__step" id="decide-who-will-place-orders" > -->
+            <!-- <div class="app-step-nav__header js-toggle-panel" data-position="1"> -->
+          <li class="app-step-nav__step js-step" id="decide-who-will-place-orders" >
+            <div class="app-step-nav__header js-toggle-panel" data-position="1">
               <h2 class="app-step-nav__title">
                 <span class="app-step-nav__circle app-step-nav__circle--number">
                   <span class="app-step-nav__circle-inner">
@@ -61,7 +73,8 @@
               </h2>
             </div>
   
-            <div class="app-step-nav__panel" id="step-panel-decide-who-will-place-orders-1">
+            <!-- <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-decide-who-will-place-orders-1"> -->
+            <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-decide-who-will-place-orders-1">
               <p class="app-step-nav__paragraph">
                 Representatives from local authorities and academy trusts have been contacted by email. They’ve been asked to use the <a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/start">Get help with technology service</a> to tell us if they want to:
               </p>
@@ -74,12 +87,13 @@
                 They can adapt this choice individually for each school. Additional users from within a local authority or academy trust can be invited to provide this information through the Get help with technology service.
               </p>
               <p class="app-step-nav__paragraph">This is a different process than they may have followed to order devices between May and July 2020. This step must be completed before anyone can order.</p>
+              
             </div>
   
           </li>
   
-          <li class="app-step-nav__step" id="nominate-people-to-manage-orders" >
-            <div class="app-step-nav__header app-step-nav__header--non-clickable" data-position="2">
+          <li class="app-step-nav__step js-step" id="nominate-people-to-manage-orders" >
+            <div class="app-step-nav__header js-toggle-panel" data-position="2">
               <h2 class="app-step-nav__title">
                 <span class="app-step-nav__circle app-step-nav__circle--number">
                   <span class="app-step-nav__circle-inner">
@@ -95,7 +109,7 @@
               </h2>
             </div>
   
-            <div class="app-step-nav__panel" id="step-panel-nominate-people-to-manage-orders-2">
+            <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-nominate-people-to-manage-orders-2">
               <p class="app-step-nav__paragraph">
                 If local authorities and academy trusts choose to let schools place their own orders,
                 they can use the <a class="govuk-link" href="https://get-help-with-tech.education.gov.uk/start">Get help with technology service</a> to nominate the headteacher or give the following information for an alternative contact at each school:
@@ -118,8 +132,8 @@
             </div>
           </li>
   
-          <li class="app-step-nav__step" id="prepare-to-place-an-order" >
-            <div class="app-step-nav__header app-step-nav__header--non-clickable" data-position="3">
+          <li class="app-step-nav__step js-step" id="prepare-to-place-an-order" >
+            <div class="app-step-nav__header js-toggle-panel" data-position="3">
               <h2 class="app-step-nav__title">
                 <span class="app-step-nav__circle app-step-nav__circle--number">
                   <span class="app-step-nav__circle-inner">
@@ -135,7 +149,7 @@
               </h2>
             </div>
   
-            <div class="app-step-nav__panel" id="step-panel-prepare-to-place-an-order-3">
+            <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-prepare-to-place-an-order-3">
               <p class="app-step-nav__paragraph">
                 While devices may not be available to order immediately, we suggest all nominated contacts familiarise themselves with this process to prevent delays when ordering   does become available.
               </p>
@@ -176,8 +190,8 @@
             </div>
           </li>
   
-          <li class="app-step-nav__step" id="choosing-devices" >
-            <div class="app-step-nav__header app-step-nav__header--non-clickable" data-position="4">
+          <li class="app-step-nav__step js-step" id="choosing-devices" >
+            <div class="app-step-nav__header js-toggle-panel" data-position="4">
               <h2 class="app-step-nav__title">
                 <span class="app-step-nav__circle app-step-nav__circle--number">
                   <span class="app-step-nav__circle-inner">
@@ -193,7 +207,7 @@
               </h2>
             </div>
   
-            <div class="app-step-nav__panel" id="step-panel-choosing-devices-4">
+            <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-choosing-devices-4">
               <p class="app-step-nav__paragraph">
                 The device types (depending on availability) will be:
               </p>
@@ -260,8 +274,8 @@
             </div>
           </li>
   
-          <li class="app-step-nav__step" id="place-an-order" >
-            <div class="app-step-nav__header app-step-nav__header--non-clickable" data-position="5">
+          <li class="app-step-nav__step js-step" id="place-an-order" >
+            <div class="app-step-nav__header js-toggle-panel" data-position="5">
               <h2 class="app-step-nav__title">
                 <span class="app-step-nav__circle  app-step-nav__circle--number">
                   <span class="app-step-nav__circle-inner">
@@ -277,7 +291,7 @@
               </h2>
             </div>
   
-            <div class="app-step-nav__panel" id="step-panel-place-an-order-5">
+            <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-place-an-order-5">
               <p class="app-step-nav__paragraph">
                 If face-to-face education at a school is disrupted due to coronavirus (such as a ‘bubble’ or year group being advised not to attend), schools can make us aware via the <a class="govuk-link" href="https://form.education.gov.uk/service/educational-setting-status">DfE educational settings status form</a> which is monitored daily.
               </p>
@@ -310,8 +324,8 @@
   
           </li>
   
-          <li class="app-step-nav__step js-step" id="receive-and-distribute-laptops-and-tablets" >
-            <div class="app-step-nav__header app-step-nav__header--non-clickable" data-position="6">
+          <li class="app-step-nav__step js-step js-step" id="receive-and-distribute-laptops-and-tablets" >
+            <div class="app-step-nav__header js-toggle-panel" data-position="6">
               <h2 class="app-step-nav__title">
                 <span class="app-step-nav__circle app-step-nav__circle--number">
                   <span class="app-step-nav__circle-inner">
@@ -327,7 +341,7 @@
               </h2>
             </div>
   
-            <div class="app-step-nav__panel" id="step-panel-receive-and-distribute-laptops-and-tablets-6">
+            <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-receive-and-distribute-laptops-and-tablets-6">
               <p class="app-step-nav__paragraph">
                 Due to increased levels of demand, devices will be delivered to schools within 5 working days of an order being confirmed, subject to stock availability.
               </p>
