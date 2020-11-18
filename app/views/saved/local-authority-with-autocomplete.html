@@ -4,6 +4,74 @@
 Get Support: Which local authority do you work for?
 {% endblock %}
 
+{% block pageScripts %}
+<script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script type="text/javascript">
+    const countries = [
+    "South Holland",
+    "Ards and North Down",
+    "South Kesteven",
+    "West Lindsey",
+    "Breckland",
+    "Clackmannanshire",
+    "Dumfries and Galloway",
+    "Broadland",
+    "Great Yarmouth",
+    "East Ayrshire",
+    "East Lothian",
+    "King's Lynn and West Norfolk",
+    "North Norfolk",
+    "East Renfrewshire",
+    "Elmbridge",
+    "Na h-Eileanan Siar",
+    "Hartlepool",
+    "Norwich",
+    "South Norfolk",
+    "Falkirk",
+    "Middlesbrough",
+    "Guildford",
+    "Corby",
+    "Redcar and Cleveland",
+    "Highland",
+    "Inverclyde",
+    "Stockton-on-Tees",
+    "Daventry",
+    "Mole Valley",
+    "Reigate and Banstead",
+    "Darlington",
+    "Midlothian",
+    "East Northamptonshire",
+    "Kettering",
+    "Moray",
+    "Halton",
+    "Runnymede",
+    "Spelthorne",
+    "Warrington",
+    "North Ayrshire",
+    "Northampton",
+    "South Northamptonshire",
+    "Orkney Islands",
+    "Blackburn with Darwen",
+    "Surrey Heath",
+    "Tandridge",
+    "Blackpool",
+    "Wellingborough",
+    "Scottish Borders",
+    "Shetland Islands",
+    "Kingston upon Hull, City of",
+    "Waverley",
+    "Craven",
+    "Hambleton"
+  ]
+
+accessibleAutocomplete({
+  element: document.querySelector('#la-name-container'),
+  id: 'la-name', // To match it to the existing <label>.
+  source: countries
+})
+  </script>
+{% endblock %}
+
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
@@ -50,13 +118,16 @@ Get Support: Which local authority do you work for?
             </legend>
             
             <div class="govuk-form-group">
-              <label class="govuk-label" for="la-name">
+
+              <label class="govuk-label" for="la-name">Local authority name</label>
+              <div id="la-name-container"></div>
+              <!-- <label class="govuk-label" for="la-name">
                 Local authority name
-              </label>
+              </label> -->
               <!-- <span id="la-name-error" class="govuk-error-message">
                 <span class="govuk-visually-hidden">Error:</span> Enter your full name
               </span> -->
-              <input class="govuk-input govuk-!-width-three-quarters" id="la-name" name="la-name" type="text" spellcheck="false" autocomplete="false" {{ data['la-name'] }}>
+              <!-- <input class="govuk-input govuk-!-width-three-quarters" id="la-name" name="la-name" type="text" spellcheck="false" autocomplete="false" value="{{ data['la-name'] }}" {{ data['la-name'] }}> -->
               <!-- <input class="govuk-input govuk-input--error" id="la-name"" name="la-name"" type="text" spellcheck="false" aria-describedby="la-name-error" autocomplete="name"></div> -->
             </div>
 
