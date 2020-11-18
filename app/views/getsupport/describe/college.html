@@ -56,7 +56,7 @@ Get Support: Which college do you work for?
               <!-- <span id="college-name-error" class="govuk-error-message">
                 <span class="govuk-visually-hidden">Error:</span> Enter your full name
               </span> -->
-              <input class="govuk-input govuk-!-width-three-quarters" id="college-name" name="college-name" type="text" spellcheck="false" autocomplete="false" {{ data['college-name'] }}>
+              <input class="govuk-input govuk-!-width-three-quarters" id="college-name" name="college-name" type="text" spellcheck="false" autocomplete="false" value="{{ data['college-name'] }}" {{ data['college-name'] }}>
               <!-- <input class="govuk-input govuk-input--error" id="college-name" name="college-name" type="text" spellcheck="false" aria-describedby="college-name-error" autocomplete="name"></div> -->
             </div>
 
@@ -75,7 +75,7 @@ Get Support: Which college do you work for?
             </span> -->
 
             {% if checked("describe", "I work for a college") %}
-            <input class="govuk-input govuk-input--width-10" id="college-ukprn" name="college-ukprn" type="text" spellcheck="false" aria-describedby="ukprm-hint" pattern="[0-9]*" inputmode="numeric" {{ data['college-ukprn'] }}>
+            <input class="govuk-input govuk-input--width-10" id="college-ukprn" name="college-ukprn" type="text" spellcheck="false" aria-describedby="ukprm-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['college-ukprn'] }}" {{ data['college-ukprn'] }}>
             {% endif %}
 
           </div>

@@ -56,7 +56,7 @@
               <!-- <span id="full-name-error" class="govuk-error-message">
                 <span class="govuk-visually-hidden">Error:</span> Enter your full name
               </span> -->
-              <input class="govuk-input" id="full-name" name="full-name" type="text" spellcheck="false" autocomplete="name" {{ data['full-name'] }}>
+              <input class="govuk-input" id="full-name" name="full-name" type="text" spellcheck="false" autocomplete="name" value="{{ data['full-name'] }}" {{ data['full-name'] }}>
               <!-- <input class="govuk-input govuk-input--error" id="full-name" name="full-name" type="text" spellcheck="false" aria-describedby="full-name-error" autocomplete="name"></div> -->
             </div>
 
@@ -71,7 +71,7 @@
               <!-- <span id="email-error" class="govuk-error-message">
                 <span class="govuk-visually-hidden">Error:</span> Enter an email address in the correct format, like name@example.com
               </span> -->
-              <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-required="true" aria-describedby="email-hint email-error" autocomplete="email" {{ data['email'] }}>
+              <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-required="true" aria-describedby="email-hint email-error" autocomplete="email" value="{{ data['email'] }}" {{ data['email'] }}>
             </div>
 
 
@@ -85,7 +85,7 @@
               <!-- <span id="phone-error" class="govuk-error-message">
                 <span class="govuk-visually-hidden">Error:</span> Enter an email address in the correct format, like name@example.com
               </span> -->
-              <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" aria-required="true" aria-describedby="phone-hint phone-error" type="tel" autocomplete="tel" {{ data['telephone-number'] }}>
+              <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" aria-required="true" aria-describedby="phone-hint phone-error" type="tel" autocomplete="tel" value="{{ data['telephone-number'] }}" {{ data['telephone-number'] }}>
 
           </fieldset>
         </div>

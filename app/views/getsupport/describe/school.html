@@ -56,7 +56,7 @@ Get Support: Which school do you work for?
               <!-- <span id="school-name-error" class="govuk-error-message">
                 <span class="govuk-visually-hidden">Error:</span> Enter your full name
               </span> -->
-              <input class="govuk-input govuk-!-width-three-quarters" id="school-name" name="school-name" type="text" spellcheck="false" autocomplete="false" {{ data['school-name'] }}>
+              <input class="govuk-input govuk-!-width-three-quarters" id="school-name" name="school-name" type="text" spellcheck="false" autocomplete="false" value="{{ data['school-name'] }}" {{ data['school-name'] }}>
               <!-- <input class="govuk-input govuk-input--error" id="school-name" name="school-name" type="text" spellcheck="false" aria-describedby="school-name-error" autocomplete="name"></div> -->
             </div>
 
@@ -72,7 +72,7 @@ Get Support: Which school do you work for?
               <!-- <span id="urn-error" class="govuk-error-message">
                 <span class="govuk-visually-hidden">Error:</span> Enter the correct format (URN is a number)
               </span> -->
-              <input class="govuk-input govuk-input--width-10" id="school-urn" name="school-urn" type="text" spellcheck="false" aria-describedby="urn-hint" pattern="[0-9]*" inputmode="numeric" {{ data['school-urn'] }}>
+              <input class="govuk-input govuk-input--width-10" id="school-urn" name="school-urn" type="text" spellcheck="false" aria-describedby="urn-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['school-urn'] }}" {{ data['school-urn'] }}>
             </div>
 
           </fieldset>
