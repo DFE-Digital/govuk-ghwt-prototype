@@ -87,6 +87,9 @@
     cursor: pointer;
     display: block;
     position: relative;
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   .autocomplete__option > * {
