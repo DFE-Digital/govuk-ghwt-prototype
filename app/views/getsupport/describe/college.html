@@ -53,11 +53,7 @@ Get Support: Which college do you work for?
               <label class="govuk-label" for="college-name">
                 College name
               </label>
-              <!-- <span id="college-name-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> Enter your full name
-              </span> -->
               <input class="govuk-input govuk-!-width-three-quarters" id="college-name" name="college-name" type="text" spellcheck="false" autocomplete="false" value="{{ data['college-name'] }}" {{ data['college-name'] }}>
-              <!-- <input class="govuk-input govuk-input--error" id="college-name" name="college-name" type="text" spellcheck="false" aria-describedby="college-name-error" autocomplete="name"></div> -->
             </div>
 
             <div class="govuk-form-group">
@@ -66,21 +62,18 @@ Get Support: Which college do you work for?
                 What&rsquo;s your college&rsquo;s UKPRN?
               </label>
 
-              <div id="urn-hint" class="govuk-hint">
+              <div id="ukprn-hint" class="govuk-hint">
               This number helps us to locate your college
               </div>
               
-            <!-- <span id="urn-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter the correct format (URN is a number)
-            </span> -->
 
             {% if checked("describe", "I work for a college") %}
-            <input class="govuk-input govuk-input--width-10" id="college-ukprn" name="college-ukprn" type="text" spellcheck="false" aria-describedby="ukprm-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['college-ukprn'] }}" {{ data['college-ukprn'] }}>
+            <input class="govuk-input govuk-input--width-10" id="college-ukprn" name="college-ukprn" type="text" spellcheck="false" aria-describedby="ukprn-hint ukprn-hint-extra" pattern="[0-9]*" inputmode="numeric" value="{{ data['college-ukprn'] }}" {{ data['college-ukprn'] }}>
             {% endif %}
 
           </div>
 
-          <p class="govuk-body govuk-!-margin-top-3">How can I find my college&rsquo;s UKPRN? Your UKPRN is your college&rsquo;s 8-digit UK Provider Reference number that always starts with a 1. You can find this by searching for your college on the <a href="https://get-information-schools.service.gov.uk/">Get information about schools</a> website.</p>
+          <p class="govuk-body govuk-!-margin-top-3" id="ukprn-hint-extra">How can I find my college&rsquo;s UKPRN? Your UKPRN is your college&rsquo;s 8-digit UK Provider Reference number that always starts with a 1. You can find this by searching for your college on the <a href="https://get-information-schools.service.gov.uk/">Get information about schools</a> website.</p>
 
           </fieldset>
         </div>

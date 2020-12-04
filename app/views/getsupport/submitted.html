@@ -37,10 +37,10 @@
       
       <p class="govuk-body">We aim to respond within 3 working days.</p> 
 
+       <!-- @TODO TRACK LINK ? -->
       <p class="govuk-body">Access further resources on 
-         <a href="https://get-help-with-tech.education.gov.uk/">Get help with technology</a></p> 
-
-      <!-- <p class="govuk-body">Information for local authorities, academy trusts and schools about the devices, internet access and support available to provide remote education and access to children’s social care during coronavirus (COVID-19).</p> -->
+         <a href="https://get-help-with-tech.education.gov.uk/" rel="noreferrer noopener" target="_blank">Get help with technology</a>
+      </p> 
     </div>
 
 
@@ -49,10 +49,13 @@
       {% if checked("support", "Laptops and tablets") or checked("support", "4G wireless routers and internet access") or checked("support", "Digital education platforms") or checked("support", "Technology training and support")%}
 
       <aside class="app-related-items" role="complementary">
+
+        <!-- @TODO NEED TO ADD TRACKING FOR THESE LINKS -->
         {% if checked("support", "Laptops and tablets") %}
-        <h2 class="govuk-heading-m">
+        <h2 class="govuk-heading-m" id="help-laptops-and-tablets">
           Laptops and tablets
         </h2>
+        <nav role="navigation" aria-labelledby="help-laptops-and-tablets">
           <ul class="govuk-list govuk-!-font-size-16">
             <li>
               <a href="https://ghwt-get-support-prototype.herokuapp.com/devices/how-to-order">
@@ -70,30 +73,33 @@
               </a>
             </li>
           </ul>
+        </nav>
 
         {% endif %} 
 
         {% if checked("support", "4G wireless routers and internet access") %}
 
-          <h2 class="govuk-heading-m">4G wireless routers and internet access</h2>
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">
-                Get internet access
-              </a>
-            </li>
-            <li>
-              <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">
-                About 4G wireless routers
-              </a>
-            </li>
-          </ul>
+          <h2 class="govuk-heading-m" id="help-routers-internet">4G wireless routers and internet access</h2>
+          <nav role="navigation" aria-labelledby="help-routers-internet">
+            <ul class="govuk-list govuk-!-font-size-16">
+              <li>
+                <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">
+                  Get internet access
+                </a>
+              </li>
+              <li>
+                <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">
+                  About 4G wireless routers
+                </a>
+              </li>
+            </ul>
+            </nav>
 
         {% endif %} 
 
         {% if checked("support", "Digital education platforms") %}
-        <h2 class="govuk-heading-m">Digital education platforms</h2>
-
+        <h2 class="govuk-heading-m" id="help-education-platforms">Digital education platforms</h2>
+        <nav role="navigation" aria-labelledby="help-education-platforms">
           <ul class="govuk-list govuk-!-font-size-16">
             <li>
               <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">
@@ -101,11 +107,12 @@
               </a>
             </li>
           </ul>
+        </nav>
         {% endif %} 
 
        {% if checked("support", "Technology training and support") %}
-        <h2 class="govuk-heading-m">Technology training and support</h2>
-
+        <h2 class="govuk-heading-m" id="help-training-support">Technology training and support</h2>
+        <nav role="navigation" aria-labelledby="help-training-support">
           <ul class="govuk-list govuk-!-font-size-16">
             <li>
               <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">
@@ -113,6 +120,7 @@
               </a>
             </li>
           </ul>
+        </nav>
       {% endif %} 
         
       </aside>

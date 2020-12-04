@@ -73,7 +73,6 @@ const las = [
   </script>
 {% endblock %}
 
-
 {% block beforeContent %}
   {{ govukPhaseBanner({
     tag: {
@@ -121,10 +120,9 @@ const las = [
             </legend>
             
             <div class="govuk-form-group">
-
+              <!-- accessible autocomplete -->
               <label class="govuk-label" for="la-name">Local authority name</label>
               <div id="la-name-container"></div>
-
             </div>
 
           </fieldset>
